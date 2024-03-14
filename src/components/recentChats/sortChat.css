@@ -1,0 +1,37 @@
+.chat-sorting {
+  width: 100%;
+  padding: 0 15px 0 15px;
+  min-height: 26px;
+  position: relative;
+  display: flex;
+  gap: 20px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  position: sticky;
+  top: 50px;
+  transition: all 0.3s;
+  z-index: 100;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+.chat-sorting .sort-button {
+  min-height: 26px;
+  border: 1px solid var(--cl-16);
+  font-size: var(--f-0-8em);
+  padding: 0 10px;
+  font-weight: normal;
+  font-family: "wave";
+  border-radius: 4px;
+  background-color: var(--cl-3);
+  color: var(--cl-32);
+  cursor: pointer;
+  text-wrap: nowrap !important;
+  transition: border 0.4s;
+  white-space: nowrap !important;
+}
+
+.chat-sorting .sort-button.checked {
+  background-color: var(--cl-26) !important;
+  color: var(--cl-3);
+}

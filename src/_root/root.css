@@ -1,0 +1,306 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "wave";
+}
+
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  ::selection {
+    background: transparent;
+  }
+
+  :active {
+    text-decoration: none !important;
+    outline: none !important;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -ms-touch-action: manipulation;
+  }
+}
+
+@font-face {
+  font-family: "wave";
+  src: url(../../assets/fonts/static/PlusJakartaSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "wave-bold";
+  src: url(../../assets/fonts/static/PlusJakartaSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: "x-and-r";
+  src: url(../../assets/fonts/arial_black.ttf);
+}
+
+body {
+  justify-content: center;
+  font-family: "wave";
+  font-size: calc(15px);
+  color: var(--cl-1);
+  overflow-x: hidden;
+}
+
+/* MATMATIKAAA  
+ device width 390px
+ 1) 390 * 0.5%  = 1.95px;
+ 2) 13px + 1.95px = 14.95px; 
+ font size = 14.95px;
+*/
+
+h1 {
+  font-family: "wave-bold";
+  font-size: var(--f-2-8em);
+  /* MATMATIKAAA
+  font size = 14.95; 
+  h1 font size need = 42px;
+  1) 14.95 * 2.81 = 42.0095; 
+  */
+}
+
+.wrapper {
+  padding: 0 20px;
+  overflow-y: scroll;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: relative;
+  height: 100vh;
+}
+
+@media screen and (max-width: 375px) {
+  /*  */
+}
+
+.page-fade-in_right {
+  animation: page-fade-in_right var(--page-fade-animation-time)
+    cubic-bezier(0.71, -0.02, 0.19, 0.84);
+}
+
+.page-fade-out_right {
+  animation: page-fade-out_right var(--page-fade-animation-time)
+    cubic-bezier(0.71, -0.02, 0.19, 0.84);
+}
+
+.page-fade-in_left {
+  animation: page-fade-in_left var(--page-fade-animation-time)
+    cubic-bezier(0.71, -0.02, 0.19, 0.84);
+}
+
+.page-fade-out_left {
+  animation: page-fade-out_left var(--page-fade-animation-time)
+    cubic-bezier(0.71, -0.02, 0.19, 0.84);
+}
+
+.page-fade-in_top {
+  animation: page-fade-out_left var(--page-fade-animation-time)
+    cubic-bezier(0.71, -0.02, 0.19, 0.84);
+}
+
+@keyframes page-fade-in_right {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes page-fade-out_right {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+@keyframes page-fade-in_left {
+  from {
+    left: 100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes page-fade-out_left {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.page-fade-in_right,
+.page-fade-out_right,
+.page-fade-in_left,
+.page-fade-out_left {
+  animation-fill-mode: forwards !important;
+}
+
+button {
+  padding: 13.5px 10px;
+  font-size: var(--f-1em);
+  color: var(--cl-3);
+  font-family: "wave-bold";
+  border: none;
+  background-color: var(--cl-1);
+  border-radius: 8px;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  /* MATMATIKAA
+  font size = 14.95; 
+  span font size need = 16px;
+  1) 14.95 *  1.0709 = 16.01;
+  */
+}
+
+button:hover {
+  opacity: 0.6;
+}
+
+button:active {
+  background-color: var(--cl-5);
+  opacity: 1 !important;
+}
+
+button:disabled {
+  opacity: 0.4;
+}
+
+a {
+  color: var(--cl-1);
+  text-decoration: none;
+}
+
+.input-box {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: var(--f-0-9em);
+  font-family: "wave-bold";
+  color: var(--cl-2);
+  margin-bottom: 5px;
+  /* MATMATIKAA
+  font size = 14.95; 
+  label font size need = 14px;
+  1) 14.95 * 1.0709 = 16.01;
+  */
+}
+
+input {
+  font-size: var(--f-1em);
+  font-family: "wave";
+  color: var(--cl-2);
+  outline: none;
+  padding: 12.5px 10px;
+  background-color: var(--cl-6);
+  border: 1px solid var(--cl-7);
+  border-radius: 8px;
+  transition: background-color 0.2s, border 0.2s;
+  /* MATMATIKAA
+  font size = 14.95; 
+  input font size need = 16px;
+  1) 14.95 * 1.0709 = 16.01;
+  */
+}
+
+input::placeholder {
+  color: var(--cl-2);
+  font-style: italic;
+}
+
+input:focus {
+  background-color: var(--cl-8);
+  border: 1px solid var(--cl-9);
+}
+
+.checkbox {
+  flex-direction: row !important;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.checkbox-wrap {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  width: 40px;
+  margin: 0;
+  width: 100%;
+}
+
+.checkbox-wrap .checkbox_inp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.checkbox-wrap .checkbox_mark {
+  display: inline-block;
+  position: relative;
+  border-radius: 25px;
+  width: 40px;
+}
+
+.checkbox-wrap .checkbox_mark:before,
+.checkbox_item .checkbox-wrap .checkbox_mark:after {
+  content: "";
+  position: absolute;
+  transition: all 0.2s ease;
+}
+
+.checkbox-wrap .checkbox_mark {
+  background: var(--cl-36);
+  width: 40px;
+  height: 16px;
+  padding: 2px;
+}
+
+.checkbox-wrap .checkbox_mark:before {
+  top: -3px;
+  left: -3px;
+  width: 24px;
+  height: 24px;
+  background: var(--cl-13);
+  border-radius: 50%;
+}
+
+/* .checkbox_wrap .checkbox_inp:checked ~ .checkbox_mark {
+} */
+
+.checkbox-wrap .checkbox_inp:checked ~ .checkbox_mark:before {
+  left: 20px;
+  background: var(--cl-1);
+}

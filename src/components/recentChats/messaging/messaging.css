@@ -1,0 +1,147 @@
+.message-box {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: var(--cl-16);
+  top: 0;
+  right: -100%;
+  opacity: 0;
+  transition: right 0.15s, opacity 0.3s;
+  z-index: 999;
+}
+
+.chatter-user-banner-top {
+  padding: 30px 15px 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--cl-35);
+  background-color: var(--cl-3);
+}
+
+.chatter-user-image-user-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.chatter-user-img-name-status .chatter-info .chatter-info-username {
+  font-size: var(--f-1em);
+  color: var(--cl-32);
+}
+
+.chatter-user-img-name-status .chatter-info .chatter-info-status {
+  font-size: var(--f-0-9em);
+}
+
+.chatter-user-img-name-status .chatter-info .chatter-info-status.online {
+  color: var(--cl-1) !important;
+}
+
+.chatter-user-img-name-status .chatter-info .chatter-info-status.offline {
+  color: var(--cl-30) !important;
+}
+
+.chatter-user-img-name-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatter-call-videocall-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.chatter-user {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.chatter-user img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.chatter-user-banner-top .back-vector {
+  padding-right: 15px;
+}
+.chatter-call-videocall-info svg,
+.chatter-user-banner-top .back-vector svg {
+  height: 24px;
+  cursor: pointer;
+}
+
+.chatter-call-videocall-info svg path {
+  fill: var(--cl-30);
+  stroke: var(--cl-30);
+}
+
+/* send message  */
+.chatter-send-message-block {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--cl-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 15px 20px;
+}
+
+.input-message-form-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatter-send-message-block svg {
+  height: 25px;
+  cursor: pointer;
+}
+
+.chatter-send-message-block svg path {
+  stroke: var(--cl-15);
+}
+
+.input-message-form-box button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px !important;
+  width: 38px !important;
+}
+.input-message-form-box label {
+    margin: 0;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-message-form-box input {
+  height: 38px !important;
+  width: 100%;
+  padding: 0;
+  background-color: var(--cl-3);
+  border: 1px solid var(--cl-3);
+}
+
+.input-message-form-box input::placeholder{
+    font-style: normal !important;
+}
+
+.input-message-form-box button svg path {
+  stroke: var(--cl-3) !important;
+  fill: var(--cl-3) !important;
+}
+
+.emoji-box {
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+}

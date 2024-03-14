@@ -1,0 +1,90 @@
+Proprietary Demonstration License
+
+Author: [Vahe Sargsyan]
+
+Permission to Demonstrate:
+
+You are granted the right to use this software solely for the purpose of demonstration and familiarization with its functionality.
+
+Prohibition on Distribution:
+
+You are not allowed to reproduce, clone, create derivative projects, or otherwise use the source code of this software to create similar or related projects without explicit written permission from the author. Any violations of this prohibition will be pursued in accordance with applicable laws.
+
+Prohibition on Modification:
+
+You do not have the right to make changes, modify the source code of the software, or create derivative works based on it without explicit written permission from the author.
+
+No Warranties:
+
+This software is provided "as is," without any warranties. The author is not responsible for any losses or damages that may arise from the use of this software.
+
+Copyright:
+
+All rights to the software remain with the author. Any violations of this license may result in legal consequences.
+
+Updates and Support:
+
+The author reserves the right, but is not obligated, to provide updates, bug fixes, or support for this software.
+
+Applicable Law:
+
+All matters relating to this license and the use of the software are governed by the laws of the [country/region] where the author is registered.
+
+Changes to the License:
+
+The author reserves the right to make changes to the text of the license. In the event of changes, the new version of the license becomes effective upon publication.
+
+Severability:
+
+If any provision of this license is found to be invalid, the remaining provisions remain in effect.
+
+Agreement to the License:
+
+By using or interacting with the software, you express your full agreement to the terms of this license. In case of disagreement with the terms, you are not allowed to use this software.
+
+
+
+
+Սեփականության ցուցադրման լիցենզիա
+
+Հեղինակ՝ [Վահե Սարգսյան]
+
+Ցուցադրելու թույլտվություն.
+
+Ձեզ իրավունք է տրվում օգտագործել այս ծրագրաշարը բացառապես ցուցադրելու և դրա ֆունկցիոնալությանը ծանոթանալու նպատակով:
+
+Բաշխման արգելք.
+
+Ձեզ չի թույլատրվում վերարտադրել, կլոնավորել, ստեղծել ածանցյալ նախագծեր կամ այլ կերպ օգտագործել այս ծրագրաշարի սկզբնական կոդը՝ նմանատիպ կամ հարակից նախագծեր ստեղծելու համար՝ առանց հեղինակի հստակ գրավոր թույլտվության: Այս արգելքի ցանկացած խախտում հետամուտ կլինի գործող օրենսդրությանը համապատասխան:
+
+Փոփոխությունների արգելք.
+
+Դուք իրավունք չունեք փոփոխություններ կատարել, փոփոխել ծրագրաշարի սկզբնական կոդը կամ դրա հիման վրա ստեղծել ածանցյալ աշխատանքներ՝ առանց հեղինակի հստակ գրավոր թույլտվության:
+
+Երաշխիքներ չկան.
+
+Այս ծրագիրը տրամադրվում է «ինչպես կա», առանց որևէ երաշխիքի: Հեղինակը պատասխանատվություն չի կրում որևէ կորստի կամ վնասի համար, որը կարող է առաջանալ այս ծրագրաշարի օգտագործումից:
+
+Հեղինակային իրավունք.
+
+Ծրագրաշարի բոլոր իրավունքները մնում են հեղինակին: Սույն լիցենզիայի ցանկացած խախտում կարող է հանգեցնել իրավական հետևանքների:
+
+Թարմացումներ և աջակցություն.
+
+Հեղինակը իրեն իրավունք է վերապահում, սակայն պարտավոր չէ տրամադրել թարմացումներ, սխալների շտկումներ կամ աջակցություն այս ծրագրաշարի համար:
+
+Կիրառելի օրենք.
+
+Այս լիցենզիայի և ծրագրաշարի օգտագործման հետ կապված բոլոր հարցերը կարգավորվում են այն [երկրի/տարածաշրջանի] օրենքներով, որտեղ գրանցված է հեղինակը:
+
+Լիցենզիայի փոփոխություններ.
+
+Հեղինակն իրեն իրավունք է վերապահում փոփոխություններ կատարել լիցենզիայի տեքստում: Փոփոխությունների դեպքում լիցենզիայի նոր տարբերակն ուժի մեջ է մտնում հրապարակման պահից:
+
+Բաժանելիություն:
+
+Եթե սույն լիցենզիայի որևէ դրույթ անվավեր ճանաչվի, մնացած դրույթները մնում են ուժի մեջ:
+
+Լիցենզիայի համաձայնագիր.
+
+Օգտագործելով կամ շփվելով ծրագրաշարի հետ՝ դուք արտահայտում եք ձեր լիակատար համաձայնությունը այս լիցենզիայի պայմաններին: Պայմանների հետ անհամաձայնության դեպքում ձեզ չի թույլատրվում օգտագործել այս ծրագրաշարը:

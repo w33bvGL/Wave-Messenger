@@ -1,0 +1,48 @@
+.my-user-settings {
+  padding: 30px 15px 100px 15px;
+}
+
+.my-user-settings .user-conf {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 11.5px 0;
+  justify-content: space-between;
+}
+
+.user-conf .conf-image svg {
+  width: 24px;
+  height: 24px;
+  min-height: 24px;
+  min-width: 24px;
+}
+
+.user-conf .conf-name {
+  display: flex;
+  padding-left: 20px;
+  max-height: 24px;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--cl-30);
+  font-size: calc(var(--f-0-9em) + 0.5px);
+}
+
+.conf-image-name {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-or-checker {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  justify-content: flex-end;
+}
+
+.arrow-or-checker svg {
+  width: 15px;
+}
+
+.arrow-or-checker svg path {
+  stroke: var(--cl-30);
+  opacity: 0.4;
+}

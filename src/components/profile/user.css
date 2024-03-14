@@ -1,0 +1,50 @@
+.user-profile {
+  width: 100%;
+  background-color: var(--cl-3);
+  padding: 30px 15px 10px 15px;
+  border-bottom: 1px solid var(--cl-35);
+  position: sticky;
+  top: 50px;
+  z-index: 100;
+  transition: 0.3s all;
+}
+
+.my-profile-user {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.my-image {
+  margin-right: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;}
+
+.my-image img {
+  pointer-events: none;
+  position: absolute;
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 100%;
+}
+
+.my-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.user-name-username {
+  font-size: var(--f-1-2em);
+  color: var(--cl-32);
+  font-family: "wave-bold";
+}
+
+.user-tit {
+  color: var(--cl-30);
+  font-size: var(--f-1em);
+}

@@ -1,0 +1,24 @@
+.my-profile {
+  padding: 30px 15px 0 15px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s;
+  background-color: var(--cl-3);
+}
+
+.my-profile p {
+  font-size: var(--f-1-2em);
+  font-family: "wave-bold";
+  color: var(--cl-32);
+  /* MATMATIKAA
+      font size = 14.95; 
+      p font size need = 14px;
+      1) 14.95 * 0.94em = 14.053;
+      */
+}

@@ -1,0 +1,121 @@
+.canvas-chats {
+  width: 100%;
+  padding: 20px 0px 100px 0px;
+  transition: padding 0.3s;
+  /* height: calc(100vh - 55px - 106px - 75px); */
+}
+
+.canvas-chats .chats {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: scroll;
+}
+
+.canvas-chats .user {
+ display: flex;
+ padding: 5px 15px;
+ justify-content: space-between;
+ transition: background-color 0.3s;
+}
+
+.canvas-chats .user:hover {
+  background-color: var(--cl-33);
+}
+
+.canvas-chats .user-image {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin-right: 10px;
+  z-index: 2;
+  position: relative;
+}
+
+.canvas-chats .user-status {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  bottom: 0 !important;
+  right: 0 !important;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.user-status.is-online {
+  background-color: #4ce417;
+}
+
+.user-status.is-offline {
+  background-color: #bdbdbd;
+}
+
+.canvas-chats .user-image img {
+  border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.canvas-chats .user-info {
+  width: 100%;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--cl-2);
+}
+
+.canvas-chats .user-info .name-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.canvas-chats .user-info .name-time p {
+  color: var(--cl-32);
+  font-family: "wave";
+  /* MATMATIKAA
+   font size = 14.95; 
+   p font size need = 14 px;
+   1) 14.95 * 0.94em = 14.053;
+  */
+}
+
+.canvas-chats .user-info .name-time span {
+  font-size: var(--f-0-7em);
+  color: var(--cl-31);
+}
+
+.canvas-chats .user .message-send {
+  margin-top: 5px;
+  color: var(--cl-30);
+  font-size: var(--f-0-9em);
+  font-family: "wave";
+  display: flex;
+  justify-content: space-between;
+  /* MATMATIKAA
+  font size = 14.95; 
+  p font size need = 14px;
+  1) 14.95 * 0.667em = 10.0884px;
+  */
+}
+
+.message-send .new-message-banner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: var(--cl-3);
+  background-color: var(--cl-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--f-0-7em);
+  font-family: 'wave';
+}

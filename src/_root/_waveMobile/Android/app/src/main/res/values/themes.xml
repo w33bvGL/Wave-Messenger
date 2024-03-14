@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.WaveChat" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">@color/black</item>
+    </style>
+
+    <style name="Theme.WaveChat" parent="Base.Theme.WaveChat" />
+</resources>

@@ -1,0 +1,34 @@
+:root {
+  --page-fade-animation-time: 0.35s;
+  --open-search-opacity-time: 0.1s;
+  --f-0-1em: 0.1em;
+  --f-0-2em: 0.2em;
+  --f-0-3em: 0.3em;
+  --f-0-4em: 0.4em;
+  --f-0-5em: 0.5em;
+  --f-0-6em: 0.6em;
+  --f-0-7em: 0.7em;
+  --f-0-8em: 0.8em;
+  --f-0-9em: 0.9em;
+  --f-1em: 1em;
+  --f-1-1em: 1.1em;
+  --f-1-2em: 1.2em;
+  --f-1-3em: 1.3em;
+  --f-1-4em: 1.4em;
+  --f-1-5em: 1.5em;
+  --f-1-6em: 1.6em;
+  --f-1-7em: 1.7em;
+  --f-1-8em: 1.8em;
+  --f-1-9em: 1.9em;
+  --f-2em: 2em;
+  --f-2-1em: 2.1em;
+  --f-2-2em: 2.2em;
+  --f-2-3em: 2.3em;
+  --f-2-4em: 2.4em;
+  --f-2-5em: 2.5em;
+  --f-2-6em: 2.6em;
+  --f-2-7em: 2.7em;
+  --f-2-8em: 2.8em;
+  --f-2-9em: 2.9em;
+  --f-3em: 3em;
+}

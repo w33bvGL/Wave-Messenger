@@ -1,0 +1,99 @@
+.recent-chats {
+  padding: 30px 15px 0 15px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s;
+  background-color: var(--cl-16);
+}
+
+.recent-chats p {
+  font-size: var(--f-1-2em);
+  font-family: "wave-bold";
+  color: var(--cl-32);
+  /* MATMATIKAA
+      font size = 14.95; 
+      p font size need = 14px;
+      1) 14.95 * 0.94em = 14.053;
+      */
+}
+
+.recent-chats svg {
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+}
+
+.recent-chats svg:hover path {
+  stroke: var(--cl-26) !important;
+}
+
+.recent-chats svg:active path {
+  stroke: var(--cl-5) !important;
+}
+
+.search-panel {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100vh;
+  background-color: white;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  display: none;
+  opacity: 0;
+  transition: opacity var(--open-search-opacity-time);
+}
+
+.search-back {
+  padding: 30px 15px 0 15px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.search-back svg {
+  height: 24px;
+  cursor: pointer;
+}
+
+.search-back svg:hover {
+  stroke: var(--cl-26) !important;
+}
+
+.search-back svg:active {
+  stroke: var(--cl-5) !important;
+}
+
+.search-back input {
+  font-size: var(--f-1em);
+  font-family: "wave-bold";
+  color: var(--cl-32) !important;
+  width: 100%;
+  /* MATMATIKAA
+  font size = 14.95; 
+  p font size need = 14px;
+  1) 14.95 * 0.94em = 14.053;
+  */
+  padding: 2px 15px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+
+.search-back input::placeholder {
+  color: var(--cl-32);
+  font-style: normal;
+}
+
+
