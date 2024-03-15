@@ -1,5 +1,5 @@
 <?php
- $userId = $_GET['userId'];
+ $recipient = $_GET['userId'];
  $userName = $_GET['username'];
  $firstName = $_GET['firstName'];
  $lastName = $_GET['lastName'];
@@ -56,7 +56,7 @@
                     d="M7 8v8a5 5 0 1 0 10 0V6.5a3.5 3.5 0 1 0-7 0V15a2 2 0 0 0 4 0V8" />
             </svg></label>
         <input type="hidden" id="chatter-file">
-        <button type="submit"><svg style="transform: rotate(90deg);" aria-hidden="true"
+        <button type="submit" onclick="sendMessageFromUser('<?php echo $recipient; ?>')"><svg style="transform: rotate(90deg);" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd"
                     d="M12 2c.4 0 .8.3 1 .6l7 18a1 1 0 0 1-1.4 1.3L13 19.5V13a1 1 0 1 0-2 0v6.5L5.4 22A1 1 0 0 1 4 20.6l7-18a1 1 0 0 1 1-.6Z"

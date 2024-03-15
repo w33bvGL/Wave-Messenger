@@ -116,6 +116,7 @@
   height: 38px !important;
   width: 38px !important;
 }
+
 .input-message-form-box label {
     margin: 0;
     padding: 0 10px;
@@ -123,6 +124,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .input-message-form-box input {
   height: 38px !important;
   width: 100%;
@@ -162,7 +164,7 @@
 
 .chatter-user-messages-box .message.sender {
   width: 100%;
-  background-color: rgb(9, 255, 0);
+  background-color: #09ff00;
   text-align: right;
   padding: 5px;
 }

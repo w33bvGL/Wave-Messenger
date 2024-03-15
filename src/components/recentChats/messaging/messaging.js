@@ -8,7 +8,7 @@ function openChatBlockforSelectedUser(userId, username, firstName, lastName) {
         return response.text();
       })
       .then(html => {
-        console.log(html);
+        console.log("chatOpened");
         document.getElementById('chatterMessagePanelGen').innerHTML = html;
         openCloseChatWindow();
       })

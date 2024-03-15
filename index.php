@@ -14,6 +14,7 @@ if (isset($_SESSION['refresh_token'])) {
   logout();
   header('location: welcome.php');
 }
+
 echo "<script defer>var userId = $decodedTokens->id;</script>";
 ?>
 
@@ -62,7 +63,7 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <script defer src="js/menuManager.js"></script>
 <script defer src="js/canvasChatAnimator.js"></script>
 <script defer src="js/canvasProfileAnimator.js"></script>
-
+<script defer src="_inc/_wss/wsClient.js"></script>
 <!-- chat -->
 <script src="src/components/recentChats/search.js"></script>
 <script src="src/components/recentChats/story.js"></script>
@@ -70,8 +71,10 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <script src="src/components/recentChats/createNewChat.js"></script>
 <script src="src/components/recentChats/messaging/messaging.js"></script>
 <script src="src/components/recentChats/chatList.js"></script>
+<script src="src/components/recentChats/messaging/chatter.js"></script>
 <!-- profile -->
 <script src="src/components/profile/user.js"></script>
+<!--  -->
 </html>
 <style>
   body {
