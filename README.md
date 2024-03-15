@@ -1,15 +1,20 @@
 # Настройка окружения для проекта
+
 #### Данная инструкция предназначена для установки необходимых компонентов и настройки окружения для проекта на операционных системах Linux Debian 12
 
 ### 1. Обновление пакетов
+
 Перед началом установки убедитесь, что ваша система обновлена до последней версии:
+
 ```sh
 sudo apt update
 sudo apt upgrade
 ```
 
 ### 2. Установка Visual Studio Code
+
 Visual Studio Code - это мощный редактор кода с поддержкой множества языков программирования. Следующие команды установят его на вашу систему:
+
 ```sh
 sudo apt install curl
 sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -20,7 +25,9 @@ sudo apt install code
 ```
 
 ### 3. Установка Git
+
 Git - это распределенная система управления версиями, которая позволяет контролировать изменения в исходном коде проекта. Выполните следующие команды для установки Git и настройки вашего имени пользователя и адреса электронной почты:
+
 ```sh
 sudo apt update
 sudo apt install git
@@ -32,13 +39,16 @@ git config --global user.email "ваша_электронная_почта@examp
 ```
 
 ### 4. Установка PHP
+
 PHP - это основной язык программирования для проекта. Установите PHP и несколько расширений, необходимых для работы:
+
 ```sh
 sudo apt update
 sudo apt install php php-cli php-fpm php-mysql php-xml php-curl php-mbstring php-redis
 ```
 
 Убедитесь, что у вас установлены Zend Engine и OPcache, выполнив команду:
+
 ```sh
 php --version
 ```
@@ -61,7 +71,9 @@ with Zend OPcache v8.2.7, Copyright (c), by Zend Technologies
 - php-redis: Поддержка расширения Redis для PHP.
 
 ### 5. Установка менеджера пакетов PHP Composer
+
 Composer - это инструмент для управления зависимостями в PHP-проектах. Установите его, выполнив следующие команды:
+
 ```sh
 sudo apt update
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -73,30 +85,36 @@ composer --version
 ```
 
 ### 6. Установка и настройка Nginx
+
 Nginx - это веб-сервер, который будет обслуживать этот проект. Установите его, выполнив следующие команды:
+
 ```sh
 sudo apt update
 sudo apt install nginx
 ```
 
 Убедитесь, что Nginx успешно запущен, проверив его статус:
+
 ```sh
 sudo systemctl status nginx
 ```
 
 Если у вас включен файрвол (например, UFW), убедитесь, что он разрешает трафик HTTP (порт 80)
+
 ```sh
 sudo ufw allow 'Nginx HTTP'
 ```
 
-### Проверка порта 80 на занятость
+#### Проверка порта 80 на занятость
+
 Порт 80 может быть занят другим процессом, таким как Apache. Узнайте, какой процесс использует порт 80:
+
 ```sh
 sudo netstat -tuln | grep 80 или sudo ss -tuln | grep ':80'
 ```
 
 ```sh
-tcp LISTEN 0 511 *:80 *:*   
+tcp LISTEN 0 511 *:80 *:*
 ```
 
 ```sh
@@ -105,17 +123,20 @@ sudo lsof -i :80
 
 Если порт занят другим веб-сервером, остановите его перед запуском Nginx:
 
-Отключаем другой веб сервер: 
+Отключаем другой веб сервер:
+
 ```sh
 sudo systemctl stop apache2
 ```
 
 Затем перезапустите Nginx:
+
 ```sh
 sudo systemctl restart nginx
 ```
 
 ### 7. Создание нового конфигурационного файла для проекта
+
 Создайте новый конфигурационный файл для вашего проекта:
 
 ```sh
@@ -123,12 +144,13 @@ sudo nano /etc/nginx/sites-available/default
 ```
 
 Добавьте следующий конфигурационный блок:
+
 ```sh
 # config for Wave-messenger
 server {
    listen 80;
    server_name localhost;
-   
+
    root /var/www/Wave-Messenger;
    index.php index.html index.htm;
 
@@ -148,16 +170,19 @@ server {
 ```
 
 После этого удалите стандартную папку html:
+
 ```sh
 sudo rm -rf /var/www/html
 ```
 
 Замените путь до вашей папки проекта:
+
 ```sh
 sudo mv /path/to/your/project /var/www/Wave-Messenger
 ```
 
 Затем перезапустите Nginx:
+
 ```sh
 sudo systemctl restart nginx
 ```
@@ -165,102 +190,61 @@ sudo systemctl restart nginx
 ### 8. Установка и настройка MySQL
 
 Установите пакет MySQL Server
+
 ```sh
 sudo apt update
 sudo apt install default-mysql-server
 ```
 
 После установки MySQL Server он автоматически запустится. Вы можете проверить статус службы, выполнив:
+
 ```sh
 sudo systemctl status mysql
 ```
 
 Если служба не запустилась автоматически, вы можете запустить ее вручную с помощью команды:
+
 ```sh
 sudo systemctl start mysql
 ```
 
+Входим в MySQL:
+
+```sh
+sudo mysql
+```
+
+Добавьте пароль в MySQL:
+
+```sh
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('ваш пароль тут'); FLUSH PRIVILEGES;
+```
+
+Затем перезапустите Nginx:
+
+```sh
+sudo systemctl restart nginx
+```
+
 После успешного запуска MySQL вы можете войти в командную строку MySQL, используя следующую команду:
+
 ```sh
 sudo mysql
 ```
 
 Это откроет командную строку MySQL, где вы можете начать работу с базами данных и пользователями.
 
-#### Для установки phpMyAdmin выполните следующие шаги:
-
-Установите phpMyAdmin и необходимые зависимости:
-```sh
-sudo apt update
-sudo apt install phpmyadmin php-mbstring 
-```
-
-Выберите веб-сервер, который будет автоматически настроен для запуска phpMyAdmin. После выбора apache2 отключите веб-сервер Apache:
-```sh
-sudo systemctl stop apache2
-```
-
-Создайте новый файл конфигурации для phpMyAdmin в директории sites-available Nginx:
-```sh
-sudo nano /etc/nginx/sites-available/phpmyadmin
-```
-
-Добавьте следующий конфигурационный блок:
-```sh
-# config for phpMyAdmin
-server {
-  listen 90;
-  server_name localhost;
-  
-  root /usr/share/phpmyadmin;
-
-  index index.php index.html index.htm; 
-  
-  location / {
-   try_files $uri $uri/ index.php? $query_string;
-  }
-
-  location ~ \.php$ {
-   include snippets/fastcgi-php.conf; 
-   fastcgi_pass unix:/run/php/php8.2-fpm.sock;
-  }
-
-  location ~ /\.ht {
-    deny all; 
-  } 
-}
-```
-
-Сохраните и закройте файл.
-
-Создайте символьную ссылку для этого файла в директории sites-enabled:
-```sh
-sudo ln -s /etc/nginx/sites-available/phpmyadmin /etc/nginx/sites-enabled/
-```
-
-Перезапустите Nginx, чтобы изменения вступили в силу:
-```sh
-sudo systemctl restart nginx
-```
-
-Добавьте пароль в MySQL и phpMyAdmin:
-```sh
-sudo mysql
-```
-
-```sh
-SET PASSWORD FOR 'root'@'localhost' = PASSWORD('ваш пароль тут'); FLUSH PRIVILEGES;
-```
-
 ### 9. импорт базы данных mySql
 
 Создайте базу данных:
+
 ```sh
 CREATE DATABASE Wave_messenger CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 ```
 
-Дамп базы данных находится в src/_root/wave_messenger.sql. Импортируйте дамп базы данных в базу данных Wave_messenger.
-После импорта сделайте соединение с базой данных. В файле _inc/connect.php:
+Дамп базы данных находится в src/\_root/wave_messenger.sql. Импортируйте дамп базы данных в базу данных Wave_messenger.
+После импорта сделайте соединение с базой данных. В файле \_inc/connect.php:
+
 ```sh
 $dbHost = 'localhost';
 $dbName = 'Wave_messenger';
@@ -269,6 +253,7 @@ $dbPass = 'root';
 ```
 
 Смените на ваш URL адрес в этом случае :
+
 ```sh
 $URL = 'localhost';
 ```
@@ -276,23 +261,27 @@ $URL = 'localhost';
 ### 10. Установка и настройка Redis
 
 Для установки Redis выполним следующие команды в терминале:
+
 ```sh
 sudo apt update
 sudo apt install redis-server
 ```
 
 Запускайте Redis
+
 ```sh
 sudo apt systemctl start redis
 ```
 
 PHP для использования Redis для хранения сессий
 Для этого нам понадобится настроить PHP для использования Redis в качестве хранилища сессий. Откроем файл настроек PHP php.ini:
+
 ```sh
 sudo nano /etc/php/8.2/fpm/php.ini
 ```
 
 Здесь мы указываем, что хотим использовать Redis для хранения сессий и указываем адрес Redis сервера (localhost) и порт (6379):
+
 ```sh
 session.save_handler = redis
 session.save_path = "tcp://localhost:6379"
@@ -300,66 +289,76 @@ session.save_path = "tcp://localhost:6379"
 
 Сохраните изменения и закройте файл.
 Чтобы изменения вступили в силу, перезапустите службу PHP-FPM:
+
 ```sh
 sudo systemctl restart php8.2-fpm
 ```
 
-#### Для установки phpRedisAdmin выполните следующие шаги:
+### 11. Установка и настройка MongoDb
 
-Скачайте последнюю версию phpRedisAdmin и установите путь в /var/www/phpRedisAdmin:
+Из терминала установите gnupgи , curlесли они еще не доступны:
+
 ```sh
-git clone https://github.com/ErikDubbelboer/phpRedisAdmin.git
+sudo apt-get install gnupg curl
 ```
 
-перейдите в папку redis: 
+Чтобы импортировать общедоступный ключ GPG MongoDB, выполните следующую команду:
+
 ```sh
-cd var/www/phpRedisAdmin
+curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
+ sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
+ --dearmor
 ```
 
-Установите Зависимости:
+Создайте файл списка с помощью команды, соответствующей вашей версии Debian:
+
 ```sh
-git clone https://github.com/nrk/predis.git vendor
+echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/7.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 ```
 
-Создайте новый файл конфигурации для phpRedisAdmin в директории sites-available Nginx:
+Чтобы установить последнюю стабильную версию, выполните следующую команду:
+
 ```sh
-sudo nano /etc/nginx/sites-available/phpredisadmin
+sudo apt-get install -y mongodb-org
 ```
 
-Добавьте следующий конфигурационный блок:
+После установки MongoDB автоматически запустится. Вы можете проверить его статус с помощью команды:
+Если MongoDB не запущен, вы можете запустить его с помощью команды:
+
 ```sh
-# config for phpredisadmin
-server {
-  listen 70;
-  server_name localhost;
-  
-  root /var/www/phpRedisAdmin;
-
-  index index.php index.html index.htm; 
-  
-  location / {
-   try_files $uri $uri/ index.php? $query_string;
-  }
-
-  location ~ \.php$ {
-   include snippets/fastcgi-php.conf; 
-   fastcgi_pass unix:/run/php/php8.2-fpm.sock;
-  }
-
-  location ~ /\.ht {
-    deny all; 
-  } 
-}
+sudo systemctl start mongod
 ```
 
-Сохраните и закройте файл.
+### 12. Установка Python and Flask
 
-Создайте символьную ссылку для этого файла в директории sites-enabled:
+В Debian по умолчанию часто устанавливается Python версии 3.x. Вы можете убедиться в наличии Python 3, выполнив следующую команду:
+
 ```sh
-sudo ln -s /etc/nginx/sites-available/phpredisadmin /etc/nginx/sites-enabled/
+python3 --version
 ```
 
-Перезапустите Nginx, чтобы изменения вступили в силу:
+Если Python 3 уже установлен, вы увидите его версию. Если нет, вы можете установить его из официальных репозиториев Debian с помощью следующей команды:
+
 ```sh
-sudo systemctl restart nginx
+sudo apt update
+sudo apt install python3
+```
+
+После установки Python 3 вы можете установить Flask с помощью менеджера пакетов Python pip. Убедитесь, что pip установлен. Если нет, установите его так же он понадобится для установки ScyllaDb:
+
+```sh
+sudo apt install python3-pip
+```
+
+Затем установите Flask:
+
+```sh
+sudo pip3 install flask
+```
+
+Чтобы проверить, что Python и Flask успешно установлены, выполните следующие команды:
+
+```sh
+python3 --version
+flask --version
 ```
