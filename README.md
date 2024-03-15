@@ -2,6 +2,18 @@
 
 #### Данная инструкция предназначена для установки необходимых компонентов и настройки окружения для проекта на операционных системах Linux Debian 12
 
+#### будем исползовать
+<div align="left">
+<img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="20" height="20"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg"  title="CSS3" alt="CSS" width="20" height="20"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/php/php-original.svg" title="PHP" alt="PHP" width="20" height="20"/>
+<img src="https://github.com/devicons/devicon/blob/master/icons/composer/composer-original.svg" title="composer" alt="composer" width="20" height="20"/>
+<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="20" height="20"/>
+<img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original.svg" title="MySQL" alt="MySQL" width="20" height="20"/>
+<img src="https://github.com/devicons/devicon/blob/master/icons/redis/redis-original.svg" title="Redis" alt="Redis" width="20" height="20"/>
+<img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original.svg" title="MongoDb" alt="MongoDb" width="20" height="20"/>
+</div>
+
 ### 1. Обновление пакетов
 
 Перед началом установки убедитесь, что ваша система обновлена до последней версии:
@@ -303,7 +315,6 @@ sudo apt-get install gnupg curl
 ```
 
 Чтобы импортировать общедоступный ключ GPG MongoDB, выполните следующую команду:
-
 ```sh
 curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
  sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
