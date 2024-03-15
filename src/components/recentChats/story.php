@@ -17,7 +17,7 @@
             <img src="assets/user/userBackgroundNoLoaded.png" alt="storyImageAlt" class="myStory">
         </div>
         <div class="story-user-name">
-            <p>@Tigran...</p>
+            <p>@Tigran</p>
         </div>
     </div>
     <div class="story">
@@ -25,7 +25,7 @@
             <img src="assets/user/userBackgroundNoLoaded.png" alt="storyImageAlt" class="myStory">
         </div>
         <div class="story-user-name">
-            <p>Esdes</p>
+            <p>@Hayko</p>
         </div>
     </div>
 </section>

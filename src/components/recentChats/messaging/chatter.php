@@ -37,16 +37,18 @@
     </div>
 
 </div>
-<div class="chatter-user-messages-box"></div>
+<div class="chatter-user-messages-box">
+    <div class="message recipient">hello</div>
+    <div class="message sender">hi bro</div>
+</div>
 <div class="chatter-send-message-block">
     <div class="emoji-box">
-        <svg aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
                 d="M15 9h0M9 9h0m12 3a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM6.6 13a5.5 5.5 0 0 0 10.8 0H6.6Z" />
         </svg>
     </div>
-    <form class="input-message-form-box">
+    <div class="input-message-form-box">
         <input type="text" placeholder="Write a text...">
         <label for="chatter-file"><svg class="w-[33px] h-[33px] text-gray-800 dark:text-white" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -61,5 +63,5 @@
                     clip-rule="evenodd" />
             </svg>
         </button>
-    </form>
+    </div>
 </div>
