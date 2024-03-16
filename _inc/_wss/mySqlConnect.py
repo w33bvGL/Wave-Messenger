@@ -8,9 +8,5 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'root'
 app.config['MYSQL_DB'] = 'Wave_messenger'
 
-mySql = MySQL(app)
 
-mySqlConnect = mySql.connection
-
-if __name__ == '__main__':
-    app.run(debug=True)
+mySqlConnect = MySQL(app)

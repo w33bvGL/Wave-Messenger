@@ -3,6 +3,7 @@
 #### Данная инструкция предназначена для установки необходимых компонентов и настройки окружения для проекта на операционных системах Linux Debian 12
 
 #### будем исползовать
+
 <div align="left">
 <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
@@ -315,6 +316,7 @@ sudo apt-get install gnupg curl
 ```
 
 Чтобы импортировать общедоступный ключ GPG MongoDB, выполните следующую команду:
+
 ```sh
 curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
  sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
@@ -355,21 +357,51 @@ sudo apt update
 sudo apt install python3
 ```
 
-После установки Python 3 вы можете установить Flask с помощью менеджера пакетов Python pip. Убедитесь, что pip установлен. Если нет, установите его так же он понадобится для установки ScyllaDb:
+После установки Python 3 вы можете установить Flask с помощью менеджера пакетов Python pip. Убедитесь, что pip установлен:
 
 ```sh
 sudo apt install python3-pip
-```
-
-Затем установите Flask:
-
-```sh
-sudo pip3 install flask
 ```
 
 Чтобы проверить, что Python и Flask успешно установлены, выполните следующие команды:
 
 ```sh
 python3 --version
-flask --version
+```
+
+Перейдите в каталог /var/www/Wave-Messenger:
+
+```sh
+cd /var/www/Wave-Messenger
+```
+
+Создайте виртуальное окружение в этом каталоге. Вы можете назвать его, например, env
+
+```sh
+python3 -m venv env
+```
+
+Активируйте виртуальное окружение.
+
+```sh
+source env/bin/activate
+```
+
+#### Установим все библатеки и зависимости которые будем исползовать:
+
+```sh
+pip install Flask
+```
+
+```sh
+sudo apt-get install libmariadb-dev-compat
+sudo apt-get install libmariadb-dev
+```
+
+```sh
+pip install flask-mysqldb
+```
+
+```sh
+pip install Flask-SocketIO
 ```

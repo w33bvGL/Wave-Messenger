@@ -16,7 +16,7 @@ chatSocket.onerror = function(error) {
 };
 
 // status socket 
-const statusSocket = new WebSocket('ws://localhost:4040');
+const statusSocket = new WebSocket('ws://localhost:0404');
 
 statusSocket.onopen = function() {
     console.log('status wss connectet successfuly!.');
