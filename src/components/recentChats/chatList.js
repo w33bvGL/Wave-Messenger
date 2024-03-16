@@ -19,7 +19,7 @@ function getUserFriendsList(userFriends, currentUserId) {
         console.log(newFriendIds); 
         
         if (newFriendIds.length > 0 && !arraysAreEqual(newFriendIds, existingFriendIds)) {
-          console.log("Новый список друзей не совпадает с существующим. Выполняем запрос.");
+          console.log("have new frineds..");
 
           fetch("_inc/_user/getUserFriends.php", {
             method: "POST",
@@ -30,7 +30,7 @@ function getUserFriendsList(userFriends, currentUserId) {
           })
           .then((response) => {
             if (!response.ok) {
-              throw new Error("Ошибка HTTP: " + response.status);
+              throw new Error("HTTP: " + response.status);
             }
             return response.json();
           })
@@ -117,7 +117,7 @@ function printUsersFromIndexedDB() {
           const userHtml = `
             <div class="user" onclick="openChatBlockforSelectedUser(${user.id}, '${user.username}', '${user.firstName}', '${user.lastName}');" id="user-${user.id}">
               <div class="user-image">
-                <img src="../../assets/user/userBackgroundNoLoaded.png" alt="User Image">
+                <img src="assets/images/waveUser/userNotLoaded.png" alt="User Image">
                 <div class="user-status is-online"></div>
               </div>
               <div class="user-info">

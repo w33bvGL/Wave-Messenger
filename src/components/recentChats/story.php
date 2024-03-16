@@ -14,7 +14,7 @@
     </div>
     <div class="story">
         <div class="story-image story-user">
-            <img src="assets/user/userBackgroundNoLoaded.png" alt="storyImageAlt" class="myStory">
+            <img src="assets/images/waveUser/userNotLoaded.png" alt="storyImageAlt" class="myStory">
         </div>
         <div class="story-user-name">
             <p>@Tigran</p>
@@ -22,7 +22,7 @@
     </div>
     <div class="story">
         <div class="story-image story-user">
-            <img src="assets/user/userBackgroundNoLoaded.png" alt="storyImageAlt" class="myStory">
+            <img src="assets/images/waveUser/userNotLoaded.png" alt="storyImageAlt" class="myStory">
         </div>
         <div class="story-user-name">
             <p>@Hayko</p>
