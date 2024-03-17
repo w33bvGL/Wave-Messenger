@@ -309,7 +309,7 @@ sudo systemctl restart php8.2-fpm
 
 ### 11. Установка и настройка MongoDb
 
-Из терминала установите gnupgи , curlесли они еще не доступны:
+Из терминала установите gnupgи , curl если они еще не доступны:
 
 ```sh
 sudo apt-get install gnupg curl
@@ -342,7 +342,7 @@ sudo apt-get install -y mongodb-org
 sudo systemctl start mongod
 ```
 
-### 12. Установка Python and Flask
+### 12. Установка Python
 
 В Debian по умолчанию часто устанавливается Python версии 3.x. Вы можете убедиться в наличии Python 3, выполнив следующую команду:
 

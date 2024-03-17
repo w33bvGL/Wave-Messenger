@@ -38,8 +38,6 @@
 
 </div>
 <div class="chatter-user-messages-box">
-    <div class="message recipient">hello</div>
-    <div class="message sender">hi bro</div>
 </div>
 <div class="chatter-send-message-block">
     <div class="emoji-box">
@@ -57,7 +55,7 @@
             </svg></label>
         <input type="hidden" id="chatter-file">
         <button id="chatter-send-message-button" type="submit"
-            onclick="sendMessageFromUser('<?php echo $recipient; ?>')"><svg style="transform: rotate(90deg);"
+            onclick="sendMessageFromUser(<?php echo $recipient; ?>)"><svg style="transform: rotate(90deg);"
                 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd"
                     d="M12 2c.4 0 .8.3 1 .6l7 18a1 1 0 0 1-1.4 1.3L13 19.5V13a1 1 0 1 0-2 0v6.5L5.4 22A1 1 0 0 1 4 20.6l7-18a1 1 0 0 1 1-.6Z"

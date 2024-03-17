@@ -17,16 +17,28 @@ chatSocket.onerror = function(error) {
 
 chatSocket.onmessage = function(event) {
     console.log('Received message from chat server:', event.data);
+    var messageData = JSON.parse(event.data);
+    var recipient = messageData.recipient;
+    var sender = messageData.sender;
+    var message = messageData.message;
+    if (recipient === userId) {
+        addRecipientMessage(message);
+        saveMessageToIndexedDb(recipient, sender, message, recipient)
+    } else {
+        addRecipientMessage(message);
+        saveMessageToIndexedDb(recipient, sender, message, sender)
+    }
 };
 
 function sendMessageWSS(recipient, sender, message) {
     console.log("SEND TO WS! : " + " recepientID: " +  recipient + " senderID: " + sender + " message: " + message);
-  
+
         let messageObject = {
             recipient: recipient,
             sender: sender,
             message: message 
         }
+
         let messageToJson = JSON.stringify(messageObject);
 
         console.log(messageToJson);
