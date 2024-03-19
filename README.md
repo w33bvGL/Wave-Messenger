@@ -57,7 +57,7 @@ PHP - это основной язык программирования для �
 
 ```sh
 sudo apt update
-sudo apt install php php-cli php-fpm php-mysql php-xml php-curl php-mbstring php-redis
+sudo apt install php php-cli php-fpm php-mysql php-xml php-curl php-mbstring php-redis php-mongodb
 ```
 
 Убедитесь, что у вас установлены Zend Engine и OPcache, выполнив команду:

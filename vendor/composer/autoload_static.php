@@ -4,16 +4,17 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit30429184b9e54e4f528b24f6994fa42f
+class ComposerStaticInit7639276c226066a8e9d8a2a76b17d212
 {
     public static $files = array (
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '3a37ebac017bc098e9a86b35401e7a68' => __DIR__ . '/..' . '/mongodb/mongodb/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -46,6 +47,14 @@ class ComposerStaticInit30429184b9e54e4f528b24f6994fa42f
             'Psr\\Http\\Client\\' => 16,
             'Psr\\Cache\\' => 10,
             'PHPMailer\\PHPMailer\\' => 20,
+        ),
+        'M' => 
+        array (
+            'MongoDB\\' => 8,
+        ),
+        'J' => 
+        array (
+            'Jean85\\' => 7,
         ),
         'G' => 
         array (
@@ -141,6 +150,14 @@ class ComposerStaticInit30429184b9e54e4f528b24f6994fa42f
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
+        'MongoDB\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mongodb/mongodb/src',
+        ),
+        'Jean85\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jean85/pretty-package-versions/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -179,9 +196,9 @@ class ComposerStaticInit30429184b9e54e4f528b24f6994fa42f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit30429184b9e54e4f528b24f6994fa42f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit30429184b9e54e4f528b24f6994fa42f::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit30429184b9e54e4f528b24f6994fa42f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7639276c226066a8e9d8a2a76b17d212::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7639276c226066a8e9d8a2a76b17d212::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7639276c226066a8e9d8a2a76b17d212::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -17,16 +17,28 @@ chatSocket.onerror = function(error) {
 
 chatSocket.onmessage = function(event) {
     console.log('Received message from chat server:', event.data);
-    var messageData = JSON.parse(event.data);
-    var recipient = messageData.recipient;
-    var sender = messageData.sender;
-    var message = messageData.message;
+    let messageData = JSON.parse(event.data);
+    let recipient = messageData.recipient;
+    let sender = messageData.sender;
+    let timestamp = messageData.timestamp;
+    let message = messageData.message;
+    console.log(timestamp);
+    let messageCurrUserOpened = document.getElementById(`user-banner-${recipient}`);
+    console.log(messageCurrUserOpened);
+
+    if(messageCurrUserOpened) {
     if (recipient === userId) {
+        // aysinqn user@ mtela konkret es chat ! uremn tesela debil chi
+        saveMessageToIndexedDb(recipient, sender, message, sender, true, timestamp)
         addRecipientMessage(message);
-        saveMessageToIndexedDb(recipient, sender, message, recipient)
     } else {
+        saveMessageToIndexedDb(recipient, sender, message, sender, true, timestamp)
         addRecipientMessage(message);
-        saveMessageToIndexedDb(recipient, sender, message, sender)
+    }
+    } else {
+        // ay ste chi tese
+        console.log("curr user not opened message go to indexeddb...");
+        saveMessageToIndexedDb(recipient, sender, message, sender, false, timestamp)
     }
 };
 
@@ -36,14 +48,14 @@ function sendMessageWSS(recipient, sender, message) {
         let messageObject = {
             recipient: recipient,
             sender: sender,
-            message: message 
+            message: message,
+            timestamp: Date.now() 
         }
 
         let messageToJson = JSON.stringify(messageObject);
 
         console.log(messageToJson);
         chatSocket.send(messageToJson);
-  
 }; 
 
 // Status socket

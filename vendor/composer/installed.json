@@ -125,12 +125,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/firebase/php-jwt.git",
-                "reference": "1b9e87184745595ef70540613c0cb9de09bebab3"
+                "reference": "e9690f56c0bf9cd670655add889b4e243e3ac576"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/1b9e87184745595ef70540613c0cb9de09bebab3",
-                "reference": "1b9e87184745595ef70540613c0cb9de09bebab3",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/e9690f56c0bf9cd670655add889b4e243e3ac576",
+                "reference": "e9690f56c0bf9cd670655add889b4e243e3ac576",
                 "shasum": ""
             },
             "require": {
@@ -148,7 +148,7 @@
                 "ext-sodium": "Support EdDSA (Ed25519) signatures",
                 "paragonie/sodium_compat": "Support EdDSA (Ed25519) signatures when libsodium is not present"
             },
-            "time": "2023-12-21T20:02:08+00:00",
+            "time": "2024-03-15T20:33:57+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
@@ -510,18 +510,81 @@
             "install-path": "../guzzlehttp/psr7"
         },
         {
+            "name": "jean85/pretty-package-versions",
+            "version": "2.x-dev",
+            "version_normalized": "2.9999999.9999999.9999999-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jean85/pretty-package-versions.git",
+                "reference": "29cc5722729c0916743088fe474b04792a2ae944"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jean85/pretty-package-versions/zipball/29cc5722729c0916743088fe474b04792a2ae944",
+                "reference": "29cc5722729c0916743088fe474b04792a2ae944",
+                "shasum": ""
+            },
+            "require": {
+                "composer-runtime-api": "^2.0.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.2",
+                "jean85/composer-provided-replaced-stub-package": "^1.0",
+                "phpstan/phpstan": "^1.4",
+                "phpunit/phpunit": "^7.5|^8.5|^9.4",
+                "vimeo/psalm": "^4.3"
+            },
+            "time": "2024-03-17T17:58:00+00:00",
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Jean85\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alessandro Lai",
+                    "email": "alessandro.lai85@gmail.com"
+                }
+            ],
+            "description": "A library to get pretty versions strings of installed dependencies",
+            "keywords": [
+                "composer",
+                "package",
+                "release",
+                "versions"
+            ],
+            "support": {
+                "issues": "https://github.com/Jean85/pretty-package-versions/issues",
+                "source": "https://github.com/Jean85/pretty-package-versions/tree/2.x"
+            },
+            "install-path": "../jean85/pretty-package-versions"
+        },
+        {
             "name": "mobiledetect/mobiledetectlib",
             "version": "4.8.x-dev",
             "version_normalized": "4.8.9999999.9999999-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serbanghita/Mobile-Detect.git",
-                "reference": "5bfb7784379d4f79c94680dffb44d0ba82e9af0e"
+                "reference": "9deba9f65b7473ac63c16789bd47501a4dfcbe6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/5bfb7784379d4f79c94680dffb44d0ba82e9af0e",
-                "reference": "5bfb7784379d4f79c94680dffb44d0ba82e9af0e",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/9deba9f65b7473ac63c16789bd47501a4dfcbe6a",
+                "reference": "9deba9f65b7473ac63c16789bd47501a4dfcbe6a",
                 "shasum": ""
             },
             "require": {
@@ -535,7 +598,7 @@
                 "phpunit/phpunit": "^9.6",
                 "squizlabs/php_codesniffer": "^3.7"
             },
-            "time": "2024-02-12T13:05:52+00:00",
+            "time": "2024-03-01T22:46:51+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
@@ -576,6 +639,79 @@
                 }
             ],
             "install-path": "../mobiledetect/mobiledetectlib"
+        },
+        {
+            "name": "mongodb/mongodb",
+            "version": "v1.15.x-dev",
+            "version_normalized": "1.15.9999999.9999999-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mongodb/mongo-php-library.git",
+                "reference": "21e7ef8d8252a92848ccfffcf010699ed301c09e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/21e7ef8d8252a92848ccfffcf010699ed301c09e",
+                "reference": "21e7ef8d8252a92848ccfffcf010699ed301c09e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-mongodb": "^1.15.0",
+                "jean85/pretty-package-versions": "^1.2 || ^2.0.1",
+                "php": "^7.2 || ^8.0",
+                "symfony/polyfill-php80": "^1.19"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9.0",
+                "squizlabs/php_codesniffer": "^3.6",
+                "symfony/phpunit-bridge": "^5.2",
+                "vimeo/psalm": "^4.28"
+            },
+            "time": "2023-05-24T06:37:33+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.15.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "MongoDB\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Braun",
+                    "email": "andreas.braun@mongodb.com"
+                },
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com"
+                }
+            ],
+            "description": "MongoDB driver library",
+            "homepage": "https://jira.mongodb.org/browse/PHPLIB",
+            "keywords": [
+                "database",
+                "driver",
+                "mongodb",
+                "persistence"
+            ],
+            "support": {
+                "issues": "https://github.com/mongodb/mongo-php-library/issues",
+                "source": "https://github.com/mongodb/mongo-php-library/tree/v1.15"
+            },
+            "install-path": "../mongodb/mongodb"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -1623,12 +1759,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "9773676c8a1bb1f8d4340a62efe641cf76eda7ec"
+                "reference": "e5e7ddb00b859dbdf5ad8f3bbe4cd29a3a37aa34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9773676c8a1bb1f8d4340a62efe641cf76eda7ec",
-                "reference": "9773676c8a1bb1f8d4340a62efe641cf76eda7ec",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/e5e7ddb00b859dbdf5ad8f3bbe4cd29a3a37aa34",
+                "reference": "e5e7ddb00b859dbdf5ad8f3bbe4cd29a3a37aa34",
                 "shasum": ""
             },
             "require": {
@@ -1640,7 +1776,7 @@
             "suggest": {
                 "ext-mbstring": "For best performance"
             },
-            "time": "2024-01-29T20:11:03+00:00",
+            "time": "2024-03-14T13:49:05+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {
@@ -1766,7 +1902,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/1.x"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.29.0"
             },
             "funding": [
                 {
@@ -1791,12 +1927,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "86c5a06a61ddaf17efa1403542e3d7146af96203"
+                "reference": "48ae43e443693ddb4e574f7c12f0d17ce287694e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/86c5a06a61ddaf17efa1403542e3d7146af96203",
-                "reference": "86c5a06a61ddaf17efa1403542e3d7146af96203",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/48ae43e443693ddb4e574f7c12f0d17ce287694e",
+                "reference": "48ae43e443693ddb4e574f7c12f0d17ce287694e",
                 "shasum": ""
             },
             "require": {
@@ -1825,7 +1961,7 @@
                 "symfony/http-foundation": "For using a Symfony Request object",
                 "symfony/yaml": "For using the YAML loader"
             },
-            "time": "2024-01-30T13:10:15+00:00",
+            "time": "2024-02-27T09:52:32+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {

@@ -69,12 +69,34 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <script src="src/components/recentChats/story.js"></script>
 <script src="src/components/recentChats/sortChat.js"></script>
 <script src="src/components/recentChats/createNewChat.js"></script>
-<script src="src/components/recentChats/messaging/messaging.js"></script>
-<script src="src/components/recentChats/chatList.js"></script>
-<script src="src/components/recentChats/messaging/chatter.js"></script>
 <!-- profile -->
 <script src="src/components/profile/user.js"></script>
-<!--  -->
+
+<!-- dependecies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js" integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- getUserFriendsList -->
+<script src="js/getUserFriendsList/getNewMessageCount.js"></script>
+<script src="js/getUserFriendsList/printUsersFromIndexedDb.js"></script>
+<script src="js/getUserFriendsList/getUserInformation.js"></script>
+<script src="js/getUserFriendsList/getUserFriendsList.js"></script>
+<script src="js/getUserFriendsList/formatTimestamp.js"></script>
+<!-- openChatBlockForSelectedUser -->
+<script src="js/openChatBlockForSelectedUser/appendCurrentUserMessages.js"></script>
+<script src="js/openChatBlockForSelectedUser/markCurrentUserMessagesAsRead.js"></script>
+<script src="js/openChatBlockForSelectedUser/openChatBlockForSelectedUser.js"></script>
+<script src="js/openChatBlockForSelectedUser/openCloseChatWindow.js"></script>
+<script src="js/openChatBlockForSelectedUser/openCurrentUserMessages.js"></script>
+<!-- sendMessageFromUser -->
+<script src="js/sendMessageFromUser/addMessageFunction.js"></script>
+<script src="js/sendMessageFromUser/saveMessageToIndexedDb.js"></script>
+<script src="js/sendMessageFromUser/sendMessageFromUser.js"></script>
+<!-- getMessagesFromMongo -->
+<script src="js/getMessagesFromMongo/getMessagesFromMongo.js"></script>
+<script src="js/getMessagesFromMongo/getLastMessageFromIndexedDb.js"></script>
+<script src="js/getMessagesFromMongo/fetchMessageFromMongo.js"></script>
+<script src="js/getMessagesFromMongo/processNewMessages.js"></script>
+<!-- index -->
+<script src="js/_index.js"></script>
 </html>
 <style>
   body {

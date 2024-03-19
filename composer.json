@@ -5,7 +5,8 @@
     "mobiledetect/mobiledetectlib": "4.8.x-dev",
     "whichbrowser/parser": "dev-master",
     "firebase/php-jwt": "dev-main",
-    "guzzlehttp/guzzle": "7.9.x-dev"
+    "guzzlehttp/guzzle": "7.9.x-dev",
+    "mongodb/mongodb": "^1.11"
   },
   "minimum-stability": "dev"
 }
