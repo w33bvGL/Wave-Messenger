@@ -13,6 +13,9 @@
 .chatter-user-banner-top {
   padding: 30px 15px 10px 15px;
   display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
   align-items: center;
   border-bottom: 1px solid var(--cl-35);
   background-color: var(--cl-3);
@@ -25,7 +28,7 @@
 }
 
 .chatter-user-img-name-status .chatter-info .chatter-info-username {
-  font-size: var(--f-1em);
+  font-size: var(--f-0-9em);
   color: var(--cl-32);
 }
 
@@ -150,22 +153,71 @@
 
 .chatter-user-messages-box {
   width: 100%;
-  height: auto;
+  height: 100dvh;
+  padding: 100px 0;
   overflow: hidden;
   overflow-y: scroll;
 }
 
-.chatter-user-messages-box .message.recipient {
-  width: 100%;
-  background-color: pink;
-  text-align: left;
-  padding: 5px;
+.chatter-user-messages-box::-webkit-scrollbar {
+  scrollbar-gutter: end;
+}
+
+.chatter-user-messages-box .message {
+  background-color: transparent;
+
 }
 
 .chatter-user-messages-box .message.sender {
   width: 100%;
-  background-color: #09ff00;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
   padding: 5px;
 }
+
+.chatter-user-messages-box .message.recipient {
+   width: 100%;
+   display: flex;
+   justify-content: flex-start;
+   padding: 5;
+}
+
+.message-inner-container-p-20-sender {
+  max-width: calc(100% - 10vw);
+  background-color: var(--cl-26);
+  color: var(--cl-3);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px 10px 10px 20px;
+  text-align: right;
+}
+
+.message-inner-container-p-20-recipient {
+  max-width: calc(100% - 10vw);
+  background-color: var(--cl-3);
+  color: var(--cl-26);
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px 20px 10px 10px;
+  text-align: left;
+}
+
+.message-inner-container-p-20-sender .message{
+  font-size: var(--f-0-9em);
+  margin-right: 5px;
+}
+
+.message-inner-container-p-20-recipient .message {
+  font-size: var(--f-0-9em);
+  margin-left: 5px;
+}
+
+.message-inner-container-p-20-sender .timestamp,
+.message-inner-container-p-20-recipient .timestamp{
+  font-size: var(--f-0-6em);
+}
+
+
 

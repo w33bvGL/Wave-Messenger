@@ -25,5 +25,5 @@ if ($accessToken) {
     echo $e->getMessage();
   }
 } else {
-  echo "Access token";
+  echo "Empty AccessToken!";
 }

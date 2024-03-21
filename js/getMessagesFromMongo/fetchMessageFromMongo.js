@@ -1,6 +1,6 @@
 async function fetchMessagesFromMongo(userId, lastMessage) {
     try {
-      let requersObject = { 
+      let requersObject = {
         userId: userId,
         timestamp: lastMessage
       };

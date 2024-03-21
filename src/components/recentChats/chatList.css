@@ -38,8 +38,8 @@
 
 .canvas-chats .user-status {
   position: absolute;
-  height: 12px;
-  width: 12px;
+  height: 13px;
+  width: 13px;
   bottom: 0 !important;
   right: 0 !important;
   border-radius: 50%;

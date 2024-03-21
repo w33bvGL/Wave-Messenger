@@ -54,7 +54,7 @@ function getUserFriendsList(userFriends, currentUserId) {
                   addObjectStore.put(friend, friend.id);
                   console.log("new data addded in indexedDb");
                 });
-                printUsersFromIndexedDB()
+                //printUsersFromIndexedDB()
               });
   
               addTransaction.onerror = function (event) {
@@ -69,7 +69,7 @@ function getUserFriendsList(userFriends, currentUserId) {
             });
           } else {
             console.log("no new users");
-            printUsersFromIndexedDB();
+            //printUsersFromIndexedDB();
           }
         };
       };

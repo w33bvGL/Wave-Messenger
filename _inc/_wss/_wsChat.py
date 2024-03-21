@@ -3,7 +3,6 @@ import uvloop
 import websockets
 import json
 import mongo
-import time
 from concurrent.futures import ThreadPoolExecutor
 
 asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
