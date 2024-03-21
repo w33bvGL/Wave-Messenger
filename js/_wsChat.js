@@ -36,7 +36,8 @@ chatSocket.onmessage = function (event) {
         true,
         timestamp
       );
-      addRecipientMessage(message);
+      // uxarkmenq namak@ u timestamp@
+      addRecipientMessage(message, formatTimestamp(timestamp));
     } else {
       console.log("Error cgitem senc ban hnaravora te che => " + recipient);
     }
