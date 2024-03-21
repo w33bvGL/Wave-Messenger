@@ -3,6 +3,7 @@
   height: 100vh;
   position: absolute;
   background-color: var(--cl-16);
+  background-image: url(../../../../assets/images/chat-bg.png);
   top: 0;
   right: -100%;
   opacity: 0;
@@ -11,7 +12,7 @@
 }
 
 .chatter-user-banner-top {
-  padding: 30px 15px 10px 15px;
+  padding: 20px 15px 10px 15px;
   display: flex;
   position: fixed;
   top: 0;
@@ -93,7 +94,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px 15px 20px;
+  padding: 10px 20px 10px 20px;
 }
 
 .input-message-form-box {
@@ -195,8 +196,8 @@
 
 .message-inner-container-p-20-recipient {
   max-width: calc(100% - 10vw);
-  background-color: var(--cl-3);
-  color: var(--cl-26);
+  background-color: var(--cl-38);
+  color: var(--cl-32);
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
@@ -204,19 +205,15 @@
   text-align: left;
 }
 
-.message-inner-container-p-20-sender .message{
-  font-size: var(--f-0-9em);
-  margin-right: 5px;
-}
-
+.message-inner-container-p-20-sender .message,
 .message-inner-container-p-20-recipient .message {
   font-size: var(--f-0-9em);
-  margin-left: 5px;
 }
 
 .message-inner-container-p-20-sender .timestamp,
-.message-inner-container-p-20-recipient .timestamp{
+.message-inner-container-p-20-recipient .timestamp {
   font-size: var(--f-0-6em);
+  margin-top: 3px;
 }
 
 

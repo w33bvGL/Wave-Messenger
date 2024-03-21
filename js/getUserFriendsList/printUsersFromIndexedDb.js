@@ -61,7 +61,7 @@ async function printUsersFromIndexedDB() {
                                         <span class="message-send-time">${lastUserMessageInformation.timestamp}</span>
                                     </div>
                                     <div class="message-send">
-                                        <p>${lastUserMessageInformation.message}</p>
+                                        <p class="message-text">${lastUserMessageInformation.message}</p>
                                         ${newMessageCount > 0 ? `<div class="new-message-banner">
                                             <p>${newMessageCount}</p>
                                         </div>` : ''}

@@ -16,10 +16,10 @@
 }
 
 .canvas-chats .user {
- display: flex;
- padding: 5px 15px;
- justify-content: space-between;
- transition: background-color 0.3s;
+  display: flex;
+  padding: 5px 15px;
+  justify-content: space-between;
+  transition: background-color 0.3s;
 }
 
 .canvas-chats .user:hover {
@@ -96,7 +96,8 @@
 .canvas-chats .user .message-send {
   margin-top: 5px;
   color: var(--cl-30);
-  font-size: var(--f-0-9em);
+  font-size: var(--f-0-8em);
+  position: relative;
   font-family: "wave";
   display: flex;
   justify-content: space-between;
@@ -107,9 +108,23 @@
   */
 }
 
+.canvas-chats .user .message-send .message-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  align-items: center;
+  margin-right: 22px;
+}
+
 .message-send .new-message-banner {
-  width: 20px;
-  height: 20px;
+  position: absolute;
+  right: 0;
+  top: -2px;
+  max-width: 20px;
+  max-height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   border-radius: 50%;
   color: var(--cl-3);
   background-color: var(--cl-1);
@@ -117,5 +132,5 @@
   align-items: center;
   justify-content: center;
   font-size: var(--f-0-7em);
-  font-family: 'wave';
+  font-family: "wave";
 }
