@@ -4,12 +4,9 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-$accessToken = $_COOKIE['access_token'] ?? null;
-$accessSecret = 'xQ@7Hv$3rLp*Ew#2NcG%m9F5sD8aZ^1R!4TbY6UjW&5tC^0g';
-if ($accessToken) {
+$userId = $_GET['userId'];
+if ($userId) {
   try {
-    $decodedAccessToken = JWT::decode($accessToken, new Key($accessSecret, 'HS256'));
-    $userId = $decodedAccessToken->id;
     $query = "SELECT avatar FROM users WHERE id = :userId";
     $stmt = $connect->prepare($query);
     $stmt->bindParam(':userId', $userId);

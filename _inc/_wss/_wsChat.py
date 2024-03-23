@@ -23,20 +23,19 @@ async def new_client_connected(client_socket: websockets.WebSocketServerProtocol
             message = await client_socket.recv()
 
             print("Client Message:", message)
-            #menak recipientna petq :)  data vorpes argument functiayi
             data = json.loads(message)
             recipient = data.get("recipient")
-            
-            # namak@ to eta heto nor message save ara eti etqan karevor chi! 
+
             await save_message_to_mongo(data)
 
             if recipient in connected_clients:
                 await send_message(message, connected_clients[recipient])
                
-                
-    except websockets.exceptions.ConnectionClosedOK:
+    except websockets.exceptions.ConnectionClosedError:
         del connected_clients[user_id]
+        print("Connection closed for user:", user_id)
         print("Current connected users:", list(connected_clients.keys()))
+
         
 async def save_message_to_mongo(data):
     recipient = data.get("recipient")

@@ -32,13 +32,14 @@ function setUserAvatar() {
 }
 
 function displayImage(userImage, imageBlob) {
+  console.log(imageBlob);
   const imageUrl = URL.createObjectURL(imageBlob);
   userImage.src = imageUrl;
   console.log(imageUrl);
 }
 
 function fetchAndSaveImage(userImage) {
-  fetch("_inc/_user/setUserAvatar.php")
+  fetch(`_inc/_user/setUserAvatar.php?userId=${userId}`)
     .then(function (response) {
       if (!response.ok) {
         console.log("Avatar fetch error!");
