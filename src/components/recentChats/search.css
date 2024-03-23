@@ -15,7 +15,7 @@
 .recent-chats p {
   font-size: var(--f-1-2em);
   font-family: "wave-bold";
-  color: var(--cl-32);
+  color: var(--cl-2);
   /* MATMATIKAA
       font size = 14.95; 
       p font size need = 14px;
@@ -23,10 +23,10 @@
       */
 }
 
-.recent-chats svg {
-  width: 23px;
-  height: 23px;
+.recent-chats i {
+  font-size: var(--f-1-2em);
   cursor: pointer;
+  color: var(--cl-2);
 }
 
 .recent-chats svg:hover path {

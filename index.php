@@ -8,11 +8,11 @@ require_once '_inc/_loading/giveNewToken.php';
 
 //isset($_COOKIE['access_token'])
 if (isset($_SESSION['refresh_token'])) {
-  $decodedTokens = openJWT($URL, $connect);
+    $decodedTokens = openJWT($URL, $connect);
 } else {
-  // locout delete all cookies and session
-  logout();
-  header('location: welcome.php');
+    // locout delete all cookies and session
+    logout();
+    header('location: welcome.php');
 }
 
 echo "<script defer>var userId = $decodedTokens->id;</script>";
@@ -38,6 +38,7 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
     <link rel="stylesheet" href="src/components/recentChats/sortChat.css">
     <link rel="stylesheet" href="src/components/recentChats/story.css">
     <link rel="stylesheet" href="src/components/recentChats/messaging/messaging.css">
+    <link rel="stylesheet" href="src/components/recentChats/newContact/newContact.css">
     <!-- profile -->
     <link rel="stylesheet" href="src/components/profile/myProfile.css">
     <link rel="stylesheet" href="src/components/profile/user.css">
@@ -59,9 +60,8 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 </body>
 
 <!-- dependecies -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js"
-    integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js" integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
 <!-- webSockets -->
 <script src="js/_wsChat.js"></script>
 <script src="js/_wsStatus.js"></script>
@@ -69,6 +69,12 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <script src="js/other/displayImage.js"></script>
 <script src="js/other/createTimestampF.js"></script>
 <script src="js/other/scrollToBottom.js"></script>
+<!-- menuManager -->
+<script src="js/menuManager/menuManager.js"></script>
+<!-- createNewChat -->
+<script src="js/createNewChat/createNewChat.js"></script>
+<!-- search -->
+<script src="js/search/search.js"></script>
 <!-- getUserFriendsList -->
 <script src="js/getUserFriendsList/getNewMessageCount.js"></script>
 <script src="js/getUserFriendsList/printUsersFromIndexedDb.js"></script>
@@ -83,6 +89,8 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <script src="js/openChatBlockForSelectedUser/openChatBlockForSelectedUser.js"></script>
 <script src="js/openChatBlockForSelectedUser/openCloseChatWindow.js"></script>
 <script src="js/openChatBlockForSelectedUser/openCurrentUserMessages.js"></script>
+<script src="js/openChatBlockForSelectedUser/deleteOpenedChatterBanner.js"></script>
+<script src="js/openChatBlockForSelectedUser/getCurrUserAvatar.js"></script>
 <!-- sendMessageFromUser -->
 <script src="js/sendMessageFromUser/addMessageFunction.js"></script>
 <script src="js/sendMessageFromUser/saveMessageToIndexedDb.js"></script>
@@ -95,37 +103,37 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <!-- getUsersAvatars -->
 <script src="js/getUsersAvatars/appendUsersAvatars.js"></script>
 <script src="js/getUsersAvatars/getUsersAvatars.js"></script>
+<!-- newChat -->
+<script src="js/newContact/newContact.js"></script>
 <!-- index -->
 <script defer src="js/_index.js"></script>
 <script src="js/_indexedDb.js"></script>
 
+
+
 <script src="js/globalVariables.js"></script>
 <script src="src/components/loading/loading.js"></script>
-<script src="js/menuManager.js"></script>
 <script src="js/canvasChatAnimator.js"></script>
 <script src="js/canvasProfileAnimator.js"></script>
-<!-- chat -->
-<script src="src/components/recentChats/search.js"></script>
-<script src="src/components/recentChats/createNewChat.js"></script>
 <!-- profile -->
 <script src="src/components/profile/user.js"></script>
 
 </html>
 <style>
-body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: var(--cl-16);
-}
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: var(--cl-16);
+    }
 
-.index {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden !important;
-    scrollbar-width: none !important;
-    scrollbar-color: transparent transparent !important;
-}
+    .index {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden !important;
+        scrollbar-width: none !important;
+        scrollbar-color: transparent transparent !important;
+    }
 </style>

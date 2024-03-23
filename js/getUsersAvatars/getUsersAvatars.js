@@ -14,7 +14,7 @@ async function getUsersAvatars(currUserAvatars) {
           appendUsersAvatars(blob, userId);
           console.log("avatar have in => " + userId);
         } else {
-          throw new Error(`Failed to fetch avatar for user with ID ${userId}`);
+          throw new Error(`Failed to fetch avatars => ${userId}`);
         }
       }
       resolve(avatars);

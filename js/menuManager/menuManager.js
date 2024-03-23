@@ -1,6 +1,6 @@
 let chats = document.querySelector(".chats");
 let profile = document.querySelector(".profile");
-let menuIcons = document.querySelectorAll(".menu-inner-tit .button svg path");
+let menuIcons = document.querySelectorAll(".menu-inner-tit .button i");
 let menuText = document.querySelectorAll(
   ".menu-inner-tit .button .menu-button-text"
 );
@@ -11,7 +11,7 @@ let transition = "opacity 0.1s";
 // default
 profile.style.display = "none";
 chats.style.display = "block";
-menuIcons[0].style.fill = "var(--cl-26)";
+menuIcons[0].style.color = "var(--cl-26)";
 menuText[0].style.color = "var(--cl-26)";
 
 function openChat() {
@@ -51,9 +51,9 @@ function openProfile() {
 // change icons
 function changeMenuIcon(itemPos) {
   menuIcons.forEach((icon) => {
-    icon.style.fill = "var(--cl-15)";
+    icon.style.color = "var(--cl-15)";
   });
-  menuIcons[itemPos].style.fill = "var(--cl-26)";
+  menuIcons[itemPos].style.color = "var(--cl-26)";
 }
 
 function changeMenuText(textPos) {

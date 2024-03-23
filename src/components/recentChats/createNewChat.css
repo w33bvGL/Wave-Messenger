@@ -18,9 +18,8 @@
   box-shadow: 0px 0 20px 2px rgba(0, 0, 0, 0.1);
 }
 
-.add-user svg {
-  width: 30px;
-  height: 30px;
+.add-user button i {
+  font-size: var(--f-1-6em);
 }
 
 /* add user contact group panel styles */
@@ -48,7 +47,7 @@
   width: 100%;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  padding: 30px 15px 30px 15px;
+  padding: 30px 20px 30px 20px;
   transition: all 0.15s ease-in-out;
 }
 
@@ -61,7 +60,8 @@
 
 .select-option-user-contact-group-panel p {
   font-size: var(--f-1-2em);
-  color: var(--cl-32);
+  color: var(--cl-2);
+  font-family: "wave-bold";
   /* MATMATIKAA
       font size = 14.95; 
       p font size need = 14px;
@@ -69,23 +69,10 @@
       */
 }
 
-.select-option-user-contact-group-panel svg {
-  width: 24px;
-  height: 24px;
+.select-option-user-contact-group-panel i {
+  font-size: var(--f-1-2em);
   cursor: pointer;
-  stroke: var(--cl-32);
-}
-
-.select-option-user-contact-group-panel svg path {
-  stroke: var(--cl-32);
-}
-
-.select-option-user-contact-group-panel svg:hover path {
-  stroke: var(--cl-26) !important;
-}
-
-.select-option-user-contact-group-panel svg:active path {
-  stroke: var(--cl-5) !important;
+  color: var(--cl-2);
 }
 
 .user-contact-group-options-list .option {
@@ -96,10 +83,12 @@
 }
 .option .option-image {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.option .option-image svg {
-  width: 30px;
-  height: 30px;
+
+.option .option-image i {
+  font-size: var(--f-1-5em)
 }
 
 .option .option-name .title{

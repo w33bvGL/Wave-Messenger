@@ -1,6 +1,7 @@
 :root {
   --page-fade-animation-time: 0.35s;
   --open-search-opacity-time: 0.1s;
+  --slide-windows-animation-time: 0.15s;
   --f-0-1em: 0.1em;
   --f-0-2em: 0.2em;
   --f-0-3em: 0.3em;

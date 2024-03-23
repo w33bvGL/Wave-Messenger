@@ -3,4 +3,7 @@ function appendUsersAvatars(imageBlob, userId) {
   const imageUrl = URL.createObjectURL(imageBlob);
   userImagePath.src = imageUrl;
   console.log(imageUrl);
+
+  // linker@ pahmenq localstorage!!!!
+  localStorage.setItem(userId, imageUrl);
 }

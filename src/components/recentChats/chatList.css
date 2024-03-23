@@ -79,7 +79,7 @@
 }
 
 .canvas-chats .user-info .name-time p {
-  color: var(--cl-32);
+  color: var(--cl-2);
   font-family: "wave";
   /* MATMATIKAA
    font size = 14.95; 
@@ -90,7 +90,7 @@
 
 .canvas-chats .user-info .name-time span {
   font-size: var(--f-0-7em);
-  color: var(--cl-31);
+  color: var(--cl-30);
 }
 
 .canvas-chats .user .message-send {

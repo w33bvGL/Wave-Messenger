@@ -1,4 +1,4 @@
-const chatSocket = new WebSocket(`ws://localhost:9991?userId=${userId}`);
+const chatSocket = new WebSocket(`ws://192.168.1.7:9991?userId=${userId}`);
 
 chatSocket.onopen = function () {
   console.log("Chat WebSocket connected successfully!");
@@ -38,6 +38,8 @@ chatSocket.onmessage = function (event) {
       );
       // uxarkmenq namak@ u timestamp@
       addRecipientMessage(message, formatTimestamp(timestamp));
+      // ijnmenq nerqev 
+      scrollToBottom()
     } else {
       console.log("Error cgitem senc ban hnaravora te che => " + recipient);
     }

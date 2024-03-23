@@ -1,4 +1,4 @@
-const statusSocket = new WebSocket(`ws://localhost:9992?userId=${userId}`);
+const statusSocket = new WebSocket(`ws://192.168.1.7:9992?userId=${userId}`);
 
 statusSocket.onopen = function () {
   console.log("status WebSocket connected successfully!");

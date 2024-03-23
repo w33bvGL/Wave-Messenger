@@ -17,4 +17,7 @@
   <!-- chatbox conatiner Start -->
   <?php include_once 'messaging/messaging.php'; ?>
   <!-- chatbox container End -->
+  <!-- add new Chat Start -->
+  <?php include_once 'newContact/newContact.php'?>
+  <!-- add new Chat End -->
 </main>

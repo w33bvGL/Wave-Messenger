@@ -1,5 +1,5 @@
 .my-user-settings {
-  padding: 30px 15px 100px 15px;
+  padding: 10px 15px 100px 15px;
 }
 
 .my-user-settings .user-conf {
@@ -7,6 +7,10 @@
   margin-bottom: 10px;
   padding: 11.5px 0;
   justify-content: space-between;
+}
+
+.my-user-settings .user-conf:nth-child(2) {
+  margin-top: 30px;
 }
 
 .user-conf .conf-image svg {

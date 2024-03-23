@@ -1,0 +1,58 @@
+.new-contact-add {
+  width: 100%;
+  height: 100dvh;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  background-color: var(--cl-3);
+  right: -100%;
+  opacity: 0;
+  transition: right var(--slide-windows-animation-time), opacity var(--slide-windows-animation-time);
+}
+
+.new-contact-container-top-header {
+  padding: 30px 15px 0 15px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s;
+  background-color: var(--cl-3);
+}
+
+.new-contact-container-top-header p {
+  font-size: var(--f-1-2em);
+  font-family: "wave-bold";
+  color: var(--cl-2);
+  /* MATMATIKAA
+        font size = 14.95; 
+        p font size need = 14px;
+        1) 14.95 * 0.94em = 14.053;
+        */
+}
+
+.new-contact-container-top-header i {
+  font-size: var(--f-1-2em);
+  cursor: pointer;
+  color: var(--cl-2);
+}
+
+
+.select-search-option {
+    width: 100%;
+    padding: 40px 15px 5px 15px;
+}
+
+.select-search-option form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.select-search-option form input {
+    margin-bottom: 10px;
+}

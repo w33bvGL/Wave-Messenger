@@ -58,7 +58,7 @@ async def select_all_online_users(user_id, data):
 
 
 async def start_server():
-    async with websockets.serve(new_client_connected, "localhost", 9992):
+    async with websockets.serve(new_client_connected, "192.168.1.7", 9992):
         await asyncio.Future()
 
 if __name__ == '__main__':

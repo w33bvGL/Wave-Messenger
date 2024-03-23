@@ -24,7 +24,7 @@
   font-family: "wave";
   border-radius: 4px;
   background-color: var(--cl-3);
-  color: var(--cl-32);
+  color: var(--cl-2);
   cursor: pointer;
   text-wrap: nowrap !important;
   transition: border 0.4s;

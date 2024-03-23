@@ -3,11 +3,11 @@
   height: 100vh;
   position: absolute;
   background-color: var(--cl-16);
-  background-image: url(../../../../assets/images/chat-bg.png);
+  /* background-image: url(../../../../assets/images/chat-bg.png); */
   top: 0;
   right: -100%;
   opacity: 0;
-  transition: right 0.15s, opacity 0.3s;
+  transition: right 0.16s, opacity 0.16s;
   z-index: 999;
 }
 
@@ -29,19 +29,12 @@
 }
 
 .chatter-user-img-name-status .chatter-info .chatter-info-username {
-  font-size: var(--f-0-9em);
   color: var(--cl-32);
 }
 
-.chatter-user-img-name-status .chatter-info .chatter-info-status {
-  font-size: var(--f-0-9em);
-}
-
-.chatter-user-img-name-status .chatter-info .chatter-info-status.online {
-  color: var(--cl-1) !important;
-}
-
-.chatter-user-img-name-status .chatter-info .chatter-info-status.offline {
+.chatter-user-img-name-status .chatter-info .chatter-username{
+  font-size: var(--f-0-7em);
+  margin-top: 2px;
   color: var(--cl-30) !important;
 }
 
@@ -122,11 +115,11 @@
 }
 
 .input-message-form-box label {
-    margin: 0;
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 0;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .input-message-form-box input {
@@ -137,8 +130,8 @@
   border: 1px solid var(--cl-3);
 }
 
-.input-message-form-box input::placeholder{
-    font-style: normal !important;
+.input-message-form-box input::placeholder {
+  font-style: normal !important;
 }
 
 .input-message-form-box button svg path {
@@ -147,9 +140,9 @@
 }
 
 .emoji-box {
-    padding-right: 15px;
-    display: flex;
-    align-items: center;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
 }
 
 .chatter-user-messages-box {
@@ -166,7 +159,6 @@
 
 .chatter-user-messages-box .message {
   background-color: transparent;
-
 }
 
 .chatter-user-messages-box .message.sender {
@@ -177,20 +169,20 @@
 }
 
 .chatter-user-messages-box .message.recipient {
-   width: 100%;
-   display: flex;
-   justify-content: flex-start;
-   padding: 5;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 5;
 }
 
 .message-inner-container-p-20-sender {
-  max-width: calc(100% - 10vw);
+  max-width: calc(100% - 20vw);
   background-color: var(--cl-26);
   color: var(--cl-3);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 10px 10px 10px 20px;
+  padding: 5px 5px 5px 20px;
   text-align: right;
 }
 
@@ -215,6 +207,3 @@
   font-size: var(--f-0-6em);
   margin-top: 3px;
 }
-
-
-
