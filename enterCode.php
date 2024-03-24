@@ -25,14 +25,10 @@ require 'vendor/autoload.php';
       <p id="title">Enter 4 digit code</p>
       <p id="description">A four-digit code should have come to your<br>email address that you indicated.</p>
       <div class="input-box">
-        <input type="number" id="digit1" name="digit1" min="0" max="9" required
-          oninput="moveToNextInput(this, 'digit2', null, 1, event)" onkeydown="handleBackspace(this, event)">
-        <input type="number" id="digit2" name="digit2" min="0" max="9" required
-          oninput="moveToNextInput(this, 'digit3', 'digit1', 1, event)" onkeydown="handleBackspace(this, event)">
-        <input type="number" id="digit3" name="digit3" min="0" max="9" required
-          oninput="moveToNextInput(this, 'digit4', 'digit2', 1, event)" onkeydown="handleBackspace(this, event)">
-        <input type="number" id="digit4" name="digit4" min="0" max="9" required
-          oninput="moveToNextInput(this, 'digit4', 'digit3', 1, event)" onkeydown="handleBackspace(this, event)">
+        <input type="number" id="digit1" name="digit1" min="0" max="9" required oninput="moveToNextInput(this, 'digit2', null, 1, event)" onkeydown="handleBackspace(this, event)">
+        <input type="number" id="digit2" name="digit2" min="0" max="9" required oninput="moveToNextInput(this, 'digit3', 'digit1', 1, event)" onkeydown="handleBackspace(this, event)">
+        <input type="number" id="digit3" name="digit3" min="0" max="9" required oninput="moveToNextInput(this, 'digit4', 'digit2', 1, event)" onkeydown="handleBackspace(this, event)">
+        <input type="number" id="digit4" name="digit4" min="0" max="9" required oninput="moveToNextInput(this, 'digit4', 'digit3', 1, event)" onkeydown="handleBackspace(this, event)">
       </div>
       <div class="buttons">
         <button type="submit" id="submitBtn" class="anul-trigger slide-left">Confirm</button>
@@ -161,7 +157,7 @@ require 'vendor/autoload.php';
     }
   }
 
-  document.querySelector('form').addEventListener('submit', function (event) {
+  document.querySelector('form').addEventListener('submit', function(event) {
     var digit1 = document.getElementById('digit1').value;
     var digit2 = document.getElementById('digit2').value;
     var digit3 = document.getElementById('digit3').value;
@@ -169,7 +165,7 @@ require 'vendor/autoload.php';
 
     var enteredCode = digit1 + digit2 + digit3 + digit4;
     setTimeout(() => {
-      window.location.href = "_inc/_mailer/getDigitCode.php?code=" + enteredCode;
+      window.location.href = `_inc/_mailer/getDigitCode.php?code=${enteredCode}&email=${recipient}`;
     }, 1000);
   });
 </script>

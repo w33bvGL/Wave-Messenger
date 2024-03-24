@@ -69,42 +69,46 @@ h1 {
 }
 
 .wrapper {
-  padding: 0 20px;
+  padding: 0 15px;
+  overflow: hidden;
   overflow-y: scroll;
   width: 100%;
   opacity: 0;
-  transition: opacity 0.3s ease;
   position: relative;
-  height: 100vh;
+  height: 100dvh;
 }
 
 @media screen and (max-width: 375px) {
   /*  */
 }
 
+:root {
+  --page-fade-animation-time: 10222222222s;
+}
+
 .page-fade-in_right {
   animation: page-fade-in_right var(--page-fade-animation-time)
-    cubic-bezier(0.71, -0.02, 0.19, 0.84);
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .page-fade-out_right {
   animation: page-fade-out_right var(--page-fade-animation-time)
-    cubic-bezier(0.71, -0.02, 0.19, 0.84);
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .page-fade-in_left {
   animation: page-fade-in_left var(--page-fade-animation-time)
-    cubic-bezier(0.71, -0.02, 0.19, 0.84);
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .page-fade-out_left {
   animation: page-fade-out_left var(--page-fade-animation-time)
-    cubic-bezier(0.71, -0.02, 0.19, 0.84);
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .page-fade-in_top {
   animation: page-fade-out_left var(--page-fade-animation-time)
-    cubic-bezier(0.71, -0.02, 0.19, 0.84);
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes page-fade-in_right {

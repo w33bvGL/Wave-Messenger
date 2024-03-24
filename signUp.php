@@ -57,11 +57,11 @@ session_start();
     </form>
     <div class="sign-in">
       <button>
-        <img src="assets/sign/google.png" alt="">
+        <img src="assets/images/socialMedia/google.png" alt="google">
         Sign up with Google
       </button>
       <button>
-        <img src="assets/sign/facebook.png" alt="">
+        <img src="assets/images/socialMedia/facebook.png" alt="facebook">
         Sign up with Facebook
       </button>
     </div>
