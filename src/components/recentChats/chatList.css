@@ -1,11 +1,31 @@
 .canvas-chats {
   width: 100%;
-  padding: 20px 0px 100px 0px;
+  margin: 0 0 100px 0;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: var(--cl-3);
   transition: padding 0.3s;
-  /* height: calc(100vh - 55px - 106px - 75px); */
+  /* box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1); */
+  border-top: 1px solid var(--cl-35);
+  height: calc(100dvh - 53px - 106px - 56px);
 }
 
-.canvas-chats .chats {
+.canvas-chats .canvas-chat-list-button-slide-users {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0 30px 0;
+}
+
+.canvas-chat-list-button-slide-users .slide-button {
+  width: 70px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: var(--cl-15);
+}
+
+.canvas-chats .fa-user-chats-friends {
   width: 100%;
   height: auto;
   position: relative;
@@ -27,9 +47,10 @@
 }
 
 .canvas-chats .user-image {
-  width: 50px;
-  min-width: 50px;
-  height: 50px;
+  width: 52px;
+  min-width: 52px;
+  height: 52px;
+  min-height: 52px;
   overflow: hidden;
   margin-right: 10px;
   z-index: 2;

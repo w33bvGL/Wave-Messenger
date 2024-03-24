@@ -19,7 +19,7 @@ async function printUsersFromIndexedDB() {
             getAllUsersRequest.onsuccess = async function() {
                 const users = getAllUsersRequest.result;
                 console.log("indexdb users:", users);
-                const usersContainer = document.getElementById("chats");
+                const usersContainer = document.getElementById("fa-user-chats-friends");
 
                 for (const user of users) {
                     console.log("ID:", user.id, "userName:", user.username, "email:", user.email, "firstName:", user.firstName, "lastName:", user.lastName);

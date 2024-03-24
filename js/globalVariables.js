@@ -28,10 +28,9 @@ function resetScrollPositionAndStyles() {
   //chats styles
   header.style.backgroundColor = "var(--cl-16)";
   header.style.padding = "30px 15px 0 15px";
-  canvasChats.style.padding = "20px 0px 100px 0px";
+  canvasChats.style.padding = "0";
   chatSorting.style.backgroundColor = "var(--cl-16)";
-  chatSorting.style.padding = "0 15px 0 15px";
-  chatSorting.style.height = "26px";
+  chatSorting.style.padding = "0 15px 30 15px";
   chatSortingButtons.forEach(function (button) {
     button.style.border = "1px solid var(--cl-16)";
   });

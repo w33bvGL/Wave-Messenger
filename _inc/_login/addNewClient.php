@@ -14,7 +14,7 @@ if (isset($_SESSION['userId'])) {
   session_start();
   $alertData = ["warning", "You can't do that :)"];
   $_SESSION['error'] = $alertData;
-  header("Location: ../welcome.php");
+  header("Location: ../../welcome.php");
   exit();
 }
 

@@ -1,8 +1,5 @@
 <?php
 require_once '../connect.php';
-require_once __DIR__ . '/../../vendor/autoload.php';
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
 
 $userId = $_GET['userId'];
 if ($userId) {

@@ -21,3 +21,11 @@
   <?php include_once 'newContact/newContact.php'?>
   <!-- add new Chat End -->
 </main>
+
+<style>
+  .chats {
+    width: 100%;
+    height: 100dvh !important;
+    background-color: var(--cl-16);
+  }
+</style>

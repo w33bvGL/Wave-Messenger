@@ -6,7 +6,8 @@
     "whichbrowser/parser": "dev-master",
     "firebase/php-jwt": "dev-main",
     "guzzlehttp/guzzle": "7.9.x-dev",
-    "mongodb/mongodb": "^1.11"
+    "mongodb/mongodb": "^1.11",
+    "predis/predis": "^1.1"
   },
   "minimum-stability": "dev"
 }

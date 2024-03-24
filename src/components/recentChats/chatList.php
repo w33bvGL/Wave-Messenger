@@ -14,7 +14,10 @@ echo "<script> var friendsList = $friendsJsonData;</script>";
 
 
 <section class="canvas-chats" id="canvas-chats">
-  <div class="chats" id="chats">
+  <div class="canvas-chat-list-button-slide-users">
+    <div class="slide-button"></div>
+  </div>
+  <div class="fa-user-chats-friends" id="fa-user-chats-friends">
 
   </div>
 </section>

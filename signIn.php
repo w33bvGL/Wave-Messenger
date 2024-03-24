@@ -37,22 +37,22 @@ session_start();
     <form action="_inc/signIn.php" method="POST">
       <div class="input-box">
         <label for="email">Email</label>
-        <input type="email" placeholder="Enter your email" id="email" name="email" required>
+        <input type="email" placeholder="Enter your email" id="email" name="email" required autocomplete="username">
       </div>
       <div class="input-box" style="margin-bottom: 15px;">
         <label for="password">Password</label>
-        <input type="password" placeholder="Enter your password" id="password" name="password" required>
+        <input type="password" placeholder="Enter your password" id="password" name="password" required autocomplete="current-password">
       </div>
       <a href="forgotPassword.php" class="anul-trigger slide-left">Forgot password?</a>
       <button type="submit">Sign in</button>
     </form>
     <div class="sign-in">
       <button>
-        <img src="assets/sign/google.png" alt="">
+        <img src="assets/images/socialMedia/google.png" alt="google">
         Sign in with Google
       </button>
       <button>
-        <img src="assets/sign/facebook.png" alt="">
+        <img src="assets/images/socialMedia/facebook.png" alt="facebook">
         Sign in with Facebook
       </button>
     </div>

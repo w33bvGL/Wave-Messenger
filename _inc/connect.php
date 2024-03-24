@@ -7,7 +7,7 @@ $dbName = 'Wave_messenger';
 $dbUser = 'root';
 $dbPass = 'root';
 
-$URL = 'localhost';
+$URL = '192.168.1.7';
 
 define('DB_DSN', "mysql:host=$dbHost;dbname=$dbName");
 define('DB_USERNAME', $dbUser);

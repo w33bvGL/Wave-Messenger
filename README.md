@@ -57,13 +57,19 @@ PHP - это основной язык программирования для �
 
 ```sh
 sudo apt update
-sudo apt install php php-cli php-fpm php-mysql php-xml php-curl php-mbstring php-redis php-mongodb
+sudo apt install php php-cli php-fpm php-mysql php-xml php-curl php-mbstring php-redis php-mongodb php-pear php-dev
 ```
 
 Убедитесь, что у вас установлены Zend Engine и OPcache, выполнив команду:
 
 ```sh
 php --version
+```
+
+также вы можите удалить php
+
+```sh
+sudo apt purge php*
 ```
 
 ```sh
@@ -305,6 +311,17 @@ session.save_path = "tcp://localhost:6379"
 
 ```sh
 sudo systemctl restart php8.2-fpm
+```
+
+Загрузка phpredis: Сначала загрузите phpredis из репозитория GitHub. Вы можете сделать это, перейдя по ссылке https://github.com/phpredis/phpredis и нажав кнопку "Code" -> "Download ZIP". После загрузки архива распакуйте его в удобное место на вашем компьютере
+Компиляция и установка: Перейдите в каталог, в который вы распаковали phpredis, и выполните следующие команды в терминале:
+
+```sh
+cd phpredis
+sudo phpize
+sudo ./configure
+sudo make
+sudo make install
 ```
 
 ### 11. Установка и настройка MongoDb

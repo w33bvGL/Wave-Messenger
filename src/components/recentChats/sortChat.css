@@ -1,6 +1,6 @@
 .chat-sorting {
   width: 100%;
-  padding: 0 15px 0 15px;
+  padding: 0 15px 30px 15px;
   min-height: 26px;
   position: relative;
   display: flex;
@@ -13,6 +13,7 @@
   z-index: 100;
   scrollbar-width: none;
   scrollbar-color: transparent transparent;
+  background-color: var(--cl-16);
 }
 
 .chat-sorting .sort-button {

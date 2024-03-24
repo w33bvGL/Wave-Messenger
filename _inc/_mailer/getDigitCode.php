@@ -1,21 +1,20 @@
 <?php
 session_start();
-require_once '../connect.php';
+
+use Predis\Client;
+
+require_once '../redis.php';
 
 $email = $_SESSION['email'];
 $code = $_GET['code'];
 $location = $_SESSION['location'];
 
-$query = "SELECT code, code_expiration FROM users WHERE email = :email";
-$stmt = $connect->prepare($query);
-$stmt->bindParam(':email', $email);
-$stmt->execute();
-$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$redis = new Client();
 
-if ($result['code'] == $code) {
-  $expiration_time = strtotime($result['code_expiration']);
-  $current_time = time();
-  if ($current_time < $expiration_time) {
+if ($redis->exists($email . '_code')) {
+  $storedCode = $redis->get($email . '_code');
+
+  if ($storedCode == $code) {
     if ($location == "signUp.php") {
       header('location: ../../profileSetup.php');
     } elseif ($location == "signIn.php") {
@@ -26,12 +25,12 @@ if ($result['code'] == $code) {
       echo "location isset!";
     }
   } else {
-    $alertData = ["error", "The code has expired, please try again!"];
+    $alertData = ["error", "Invalid code, please try again!"];
     $_SESSION['error'] = $alertData;
     header('location: ../../enterCode.php');
   }
 } else {
-  $alertData = ["error", "Invalid code, please try again!"];
+  $alertData = ["error", "The code has expired or is invalid, please try again!"];
   $_SESSION['error'] = $alertData;
   header('location: ../../enterCode.php');
 }

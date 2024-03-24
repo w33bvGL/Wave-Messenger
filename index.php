@@ -122,9 +122,9 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <style>
     body {
         width: 100%;
-        height: 100%;
+        height: 100dvh;
         overflow: hidden;
-        background-color: var(--cl-16);
+        /* background-color: var(--cl-16); */
     }
 
     .index {

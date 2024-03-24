@@ -46,6 +46,7 @@ class ComposerStaticInit7639276c226066a8e9d8a2a76b17d212
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
             'Psr\\Cache\\' => 10,
+            'Predis\\' => 7,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
@@ -145,6 +146,10 @@ class ComposerStaticInit7639276c226066a8e9d8a2a76b17d212
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'Predis\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/predis/predis/src',
         ),
         'PHPMailer\\PHPMailer\\' => 
         array (
