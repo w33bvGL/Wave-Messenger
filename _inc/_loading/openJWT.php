@@ -20,7 +20,7 @@ function openJWT($URL, $connect)
         $newAccessToken = newAccessToken($userId, $connect);
         $newRefreshToken = newRefreshToken($userId, $connect);
 
-        setcookie('access_token', $newAccessToken, time() + 3600, '/', $URL, false, false);
+        setcookie('access_token', $newAccessToken, time() + 3600, '/', $URL, true, true);
         
         // decode new token
         $decodedNewAccessToken = JWT::decode($newAccessToken, new Key($accessSecret, 'HS256'));
@@ -48,7 +48,7 @@ function openJWT($URL, $connect)
             $newAccessToken = newAccessToken($userId, $connect);
             $newRefreshToken = newRefreshToken($userId, $connect);
 
-            setcookie('access_token', $newAccessToken, time() + 3600, '/', $URL, false, false);
+            setcookie('access_token', $newAccessToken, time() + 3600, '/', $URL, true, true);
 
             // decode new token
             $decodedNewAccessToken = JWT::decode($newAccessToken, new Key($accessSecret, 'HS256'));

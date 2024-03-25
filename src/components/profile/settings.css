@@ -10,14 +10,11 @@
 }
 
 .my-user-settings .user-conf:nth-child(2) {
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
-.user-conf .conf-image svg {
-  width: 24px;
-  height: 24px;
-  min-height: 24px;
-  min-width: 24px;
+.user-conf .conf-image i {
+  font-size: var(--f-1-4em);
 }
 
 .user-conf .conf-name {

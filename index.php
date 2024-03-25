@@ -43,6 +43,7 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
     <link rel="stylesheet" href="src/components/profile/myProfile.css">
     <link rel="stylesheet" href="src/components/profile/user.css">
     <link rel="stylesheet" href="src/components/profile/settings.css">
+    <link rel="stylesheet" href="src/components/profile/info.css">
 </head>
 
 <body>
@@ -108,7 +109,7 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <!-- index -->
 <script defer src="js/_index.js"></script>
 <script src="js/_indexedDb.js"></script>
-
+<script src="js/logout.js"></script>
 
 
 <script src="js/globalVariables.js"></script>

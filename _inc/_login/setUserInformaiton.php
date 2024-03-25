@@ -1,9 +1,11 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
+
 use WhichBrowser\Parser;
 
 function setUserInformation($userId, $connect)
 {
+  echo $userId;
   $parser = new Parser($_SERVER['HTTP_USER_AGENT']);
   //ip info site token!
   $token = "54e01fc2675dcc";
@@ -27,7 +29,6 @@ function setUserInformation($userId, $connect)
   $stmt->execute();
   $lastInsertedId = $connect->lastInsertId();
   setUserIpInfo($token, $connect, $lastInsertedId);
-
 }
 
 function setUserIpInfo($token, $connect, $lastInsertedId)
@@ -50,9 +51,8 @@ function setUserIpInfo($token, $connect, $lastInsertedId)
   $region = $data['region'];
   $country = $data['country'];
   $loc = $data['loc'];
-  $companyName = $data['company']['name'];
 
-  $query = "INSERT INTO usersIpInfo (userId, city, region, country, location, providerCompanyName ) VALUES (:userId, :city, :region, :country, :location, :companyName )";
+  $query = "INSERT INTO usersIpInfo (userId, city, region, country, location) VALUES (:userId, :city, :region, :country, :location)";
   $stmt = $connect->prepare($query);
 
   $stmt->bindParam(':userId', $user);
@@ -60,7 +60,6 @@ function setUserIpInfo($token, $connect, $lastInsertedId)
   $stmt->bindParam(':region', $region);
   $stmt->bindParam(':country', $country);
   $stmt->bindParam(':location', $loc);
-  $stmt->bindParam(':companyName', $companyName);
   $stmt->execute();
 }
 
@@ -89,7 +88,3 @@ function getClientTimezone($token)
   $data = json_decode($response, true);
   return $data['timezone'];
 }
-
-
-
-

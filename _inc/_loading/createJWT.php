@@ -22,6 +22,7 @@ $accessTokenData = array(
   'email' => $userData['userInfo']['email'],
   'firstName' => $userData['userInfo']['firstName'],
   'lastName' => $userData['userInfo']['lastName'],
+  'tell' => $userData['userInfo']['phone'],
   'exp' => $accessTokenExp
 );
 

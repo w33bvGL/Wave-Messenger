@@ -19,6 +19,7 @@ function newAccessToken($userId, $connect)
     'email' => $userData['userInfo']['email'],
     'firstName' => $userData['userInfo']['firstName'],
     'lastName' => $userData['userInfo']['lastName'],
+    'tell' => $userData['userInfo']['phone'],
     'exp' => $accessTokenExp
   );
 
@@ -57,7 +58,7 @@ function getClientTimezone($userId, $connect)
 
 function getClientUserInformation($userId, $connect)
 {
-  $query = "SELECT id, username, email, firstName, lastName FROM users WHERE id = :userId";
+  $query = "SELECT id, username, email, firstName, lastName, phone FROM users WHERE id = :userId";
   $stmt = $connect->prepare($query);
   $stmt->bindParam(':userId', $userId);
   $stmt->execute();
