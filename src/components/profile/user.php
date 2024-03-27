@@ -5,7 +5,7 @@
     </div>
     <div class="my-info">
       <div class="user-name-username"><?php echo $decodedTokens->firstName; echo ' '; echo $decodedTokens->lastName; ?></div>
-      <pre class="user-tit"><?php echo $decodedTokens->username . ' ID:' . $decodedTokens->id; ?></pre>
+      <pre class="user-tit"><?php echo $decodedTokens->username; ?></pre>
     </div>
   </div>
 </section>

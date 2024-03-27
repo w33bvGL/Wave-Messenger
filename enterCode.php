@@ -21,7 +21,7 @@ require 'vendor/autoload.php';
   <?php include_once 'src/components/other/successWarningError.php' ?>
   <!-- successWarningError.php END -->
   <div class="wrapper">
-    <form action="#" method="POST">
+    <div class="form">
       <p id="title">Enter 4 digit code</p>
       <p id="description">A four-digit code should have come to your<br>email address that you indicated.</p>
       <div class="input-box">
@@ -40,10 +40,9 @@ require 'vendor/autoload.php';
           window.location.href ='signIn.php';
         }">Cancel</button>
       </div>
-    </form>
+      </div>
   </div>
 </body>
-
 </html>
 <style>
   #title {
@@ -69,7 +68,7 @@ require 'vendor/autoload.php';
     */
   }
 
-  form {
+  .form {
     margin-top: 200px;
     width: 100%;
     display: flex;
@@ -84,12 +83,12 @@ require 'vendor/autoload.php';
     box-shadow: 0px 9px 15px 5px rgba(0, 0, 0, 0.1);
   }
 
-  form .input-box {
+  .form .input-box {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  form .input-box input {
+  .form .input-box input {
     width: 46px;
     height: 55px;
     font-size: var(--f-1-9em);
@@ -103,7 +102,7 @@ require 'vendor/autoload.php';
     margin-bottom: 25px;
   }
 
-  form button {
+  .form button {
     width: 50%;
   }
 
@@ -157,7 +156,8 @@ require 'vendor/autoload.php';
     }
   }
 
-  document.querySelector('form').addEventListener('submit', function(event) {
+  document.querySelector('#submitBtn').addEventListener('click', function(event) {
+    event.preventDefault();
     var digit1 = document.getElementById('digit1').value;
     var digit2 = document.getElementById('digit2').value;
     var digit3 = document.getElementById('digit3').value;
@@ -167,5 +167,6 @@ require 'vendor/autoload.php';
     setTimeout(() => {
       window.location.href = `_inc/_mailer/getDigitCode.php?code=${enteredCode}&email=${recipient}`;
     }, 1000);
+    return false;
   });
 </script>

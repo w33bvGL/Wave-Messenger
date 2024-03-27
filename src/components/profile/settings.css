@@ -5,7 +5,7 @@
 .my-user-settings .user-conf {
   display: flex;
   margin-bottom: 10px;
-  padding: 11.5px 0;
+  padding: 10px 0;
   justify-content: space-between;
 }
 
@@ -23,8 +23,8 @@
   max-height: 24px;
   align-items: center;
   justify-content: flex-start;
-  color: var(--cl-30);
-  font-size: calc(var(--f-0-9em) + 0.5px);
+  color: var(--cl-2);
+  font-size: var(--f-0-9em);
 }
 
 .conf-image-name {

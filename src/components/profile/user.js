@@ -69,4 +69,3 @@ function saveImageToIndexedDB(blob) {
     objectStore.put(blob, "userAvatar");
   };
 }
-

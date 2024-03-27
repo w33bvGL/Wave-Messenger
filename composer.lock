@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7de8c62f9708510c9898b4023b2364e2",
+    "content-hash": "c4311c964e6173395ca5fa52f5d2d37a",
     "packages": [
         {
             "name": "cboden/ratchet",
@@ -2075,9 +2075,9 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "mobiledetect/mobiledetectlib": 20,
-        "whichbrowser/parser": 20,
         "firebase/php-jwt": 20,
-        "guzzlehttp/guzzle": 20
+        "guzzlehttp/guzzle": 20,
+        "whichbrowser/parser": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

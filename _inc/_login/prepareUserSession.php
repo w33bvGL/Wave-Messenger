@@ -1,5 +1,4 @@
 <?php
-session_start();
 function prepareUserSession($userId, $connect) {
   $id = $userId;
   $query = "SELECT id FROM users WHERE id = :id";

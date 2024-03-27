@@ -1,9 +1,9 @@
 .story-container {
   width: 100%;
-  padding: 13px 15px 20px 15px;
+  padding: 10px 15px 20px 15px;
   display: flex;
   gap: 15px !important;
-  overflow-y: hidden;
+  overflow: hidden;
   overflow-x: scroll;
   scrollbar-width: none;
   scrollbar-color: transparent transparent;

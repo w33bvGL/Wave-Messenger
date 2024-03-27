@@ -63,14 +63,23 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <!-- dependecies -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment-with-locales.min.js" integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- webSockets -->
 <script src="js/_wsChat.js"></script>
 <script src="js/_wsStatus.js"></script>
 <!-- others -->
+<script src="js/globalVariables.js"></script>
+
 <script src="js/other/displayImage.js"></script>
 <script src="js/other/createTimestampF.js"></script>
 <script src="js/other/scrollToBottom.js"></script>
 <!-- menuManager -->
+<script src="js/menuManager/changeMenuIcon.js"></script>
+<script src="js/menuManager/changeMenuText.js"></script>
+<script src="js/menuManager/openChat.js"></script>
+<script src="js/menuManager/openExplore.js"></script>
+<script src="js/menuManager/openCall.js"></script>
+<script src="js/menuManager/openProfile.js"></script>
 <script src="js/menuManager/menuManager.js"></script>
 <!-- createNewChat -->
 <script src="js/createNewChat/createNewChat.js"></script>
@@ -82,6 +91,9 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <script src="js/getUserFriendsList/getUserInformation.js"></script>
 <script src="js/getUserFriendsList/getUserFriendsList.js"></script>
 <script src="js/getUserFriendsList/formatTimestamp.js"></script>
+<!-- animations -->
+<script src="js/ScrollAnimate/chatAnimate.js"></script>
+<script src="js/ScrollAnimate/resetScrollAnimations.js"></script>
 <!-- appendUserStatus -->
 <script src="js/appendUserStatus/appendUserStatus.js"></script>
 <!-- openChatBlockForSelectedUser -->
@@ -111,11 +123,7 @@ echo "<script defer>var userId = $decodedTokens->id;</script>";
 <script src="js/_indexedDb.js"></script>
 <script src="js/logout.js"></script>
 
-
-<script src="js/globalVariables.js"></script>
 <script src="src/components/loading/loading.js"></script>
-<script src="js/canvasChatAnimator.js"></script>
-<script src="js/canvasProfileAnimator.js"></script>
 <!-- profile -->
 <script src="src/components/profile/user.js"></script>
 

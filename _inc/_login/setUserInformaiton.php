@@ -1,13 +1,9 @@
 <?php
-require_once __DIR__ . '/../../vendor/autoload.php';
-
-use WhichBrowser\Parser;
+// use WhichBrowser\Parser;
 
 function setUserInformation($userId, $connect)
 {
-  echo $userId;
-  $parser = new Parser($_SERVER['HTTP_USER_AGENT']);
-  //ip info site token!
+  $parser = new WhichBrowser\Parser(getallheaders());
   $token = "54e01fc2675dcc";
   $ipAddress = getClientIP($token);
   $userAgent = $_SERVER['HTTP_USER_AGENT'];

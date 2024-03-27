@@ -61,8 +61,9 @@
   align-items: center;
 }
 
-.search-back svg {
-  height: 24px;
+.search-back i {
+  color: var(--cl-2);
+  font-size: var(--f-1-2em);
   cursor: pointer;
 }
 
@@ -76,8 +77,11 @@
 
 .search-back input {
   font-size: var(--f-1em);
+  padding: 0 30px !important;
   font-family: "wave-bold";
-  color: var(--cl-32) !important;
+  height: 23px;
+  min-height: 23px;
+  color: var(--cl-2) !important;
   width: 100%;
   /* MATMATIKAA
   font size = 14.95; 
@@ -91,8 +95,11 @@
 }
 
 .search-back input::placeholder {
-  color: var(--cl-32);
+  color: var(--cl-2);
   font-style: normal;
 }
 
 
+.chat-sorting.search-sort {
+  background-color: var(--cl-3);
+}

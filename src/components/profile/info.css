@@ -15,9 +15,9 @@
 }
 
 .profile-conf-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-conf-image i {
@@ -26,12 +26,12 @@
 
 .profile-conf-image-name .conf-name p:nth-child(1) {
   padding-left: 20px;
-  color: var(--cl-30);
-  font-size: calc(var(--f-0-9em) + 0.5px);
+  color: var(--cl-2);
+  font-size: var(--f-0-9em);
 }
 
 .profile-conf-image-name .conf-name p:nth-child(2) {
   padding-left: 20px;
   color: var(--cl-15);
-  font-size: calc(var(--f-0-8em) + 0.5px);
+  font-size: var(--f-0-8em);
 }

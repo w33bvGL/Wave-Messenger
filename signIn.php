@@ -46,7 +46,7 @@ session_start();
       <a href="forgotPassword.php" class="anul-trigger slide-left">Forgot password?</a>
       <button type="submit">Sign in</button>
     </form>
-    <div class="sign-in">
+    <!-- <div class="sign-in">
       <button>
         <img src="assets/images/socialMedia/google.png" alt="google">
         Sign in with Google
@@ -55,7 +55,7 @@ session_start();
         <img src="assets/images/socialMedia/facebook.png" alt="facebook">
         Sign in with Facebook
       </button>
-    </div>
+    </div> -->
   </div>
 </body>
 
@@ -90,7 +90,8 @@ session_start();
   }
 
   .title {
-    margin-top: 72px;
+    /* margin-top: 72px; */
+    margin-top: calc(100dvh - 95vh);
     /* MATMATIKAA
     back margin sise 60px
     back heihgh size 18px

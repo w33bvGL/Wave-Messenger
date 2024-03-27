@@ -4,8 +4,8 @@
     </button>
 </section>
 
-<section class="add-user-add-contact-add-group-panel" id="add-user-add-contact-add-group-panel">
-    <div class="add-user-contact-group-panel" id="add-user-contact-group-panel">
+<section class="add-user-add-contact-add-group-panel" id="add-user-add-contact-add-group-panel" style="display: none; opacity: 0;">
+    <div class="add-user-contact-group-panel" id="add-user-contact-group-panel" style="opacity: 0; transform: translateY(200px);">
         <div class="select-option-user-contact-group-panel">
             <p>Select Option</p>
             <i class="fa-solid fa-xmark" onclick="openUserContactOrGroupAddPanel()"></i>

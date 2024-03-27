@@ -1,26 +1,40 @@
-function openUserContactOrGroupAddPanel() {
-  let addChatContactGroup = document.getElementById(
+const openUserContactOrGroupAddPanel = () => {
+  const addChatContactGroup = document.getElementById(
     "add-user-add-contact-add-group-panel"
   );
-  let addChatContactGroupPanel = document.getElementById(
+  const addChatContactGroupPanel = document.getElementById(
     "add-user-contact-group-panel"
   );
 
-  if (panelAddChatContactGroupState == false) {
+  if (!panelAddChatContactGroupState) {
     panelAddChatContactGroupState = true;
     indexElement.style.overflow = "hidden";
     addChatContactGroup.style.display = "flex";
     setTimeout(() => {
-      addChatContactGroupPanel.style.transform = "translateY(0)";
       addChatContactGroup.style.opacity = "1";
-    }, 20);
+    }, 1);
+    anime({
+      targets: addChatContactGroupPanel,
+      translateY: 0,
+      opacity: 1,
+      duration: 150,
+      easing: "easeInOutQuad",
+    });
   } else {
     panelAddChatContactGroupState = false;
-    addChatContactGroupPanel.style.transform = "translateY(200px)";
-    indexElement.style.overflow = "auto";
-    addChatContactGroup.style.opacity = "0";
-    setTimeout(() => {
-      addChatContactGroup.style.display = "none";
-    }, 170);
+    anime({
+      targets: addChatContactGroupPanel,
+      translateY: 200,
+      opacity: 0,
+      duration: 150,
+      easing: "easeInOutQuad",
+      complete: () => {
+        addChatContactGroup.style.opacity = "0";
+        indexElement.style.overflow = "auto";
+        setTimeout(() => {
+          addChatContactGroup.style.display = "none";
+        }, 150);
+      },
+    });
   }
-}
+};

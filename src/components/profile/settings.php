@@ -2,7 +2,7 @@
     <div class="user-conf">
         <div class="conf-image-name">
             <div class="conf-image">
-                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
             </div>
             <div class="conf-name">
                 <p>Dark mode</p>

@@ -55,7 +55,7 @@ session_start();
       </div>
       <button type="submit" id="submitBtn" class="anul-trigger">Sign up</button>
     </form>
-    <div class="sign-in">
+    <!-- <div class="sign-in">
       <button>
         <img src="assets/images/socialMedia/google.png" alt="google">
         Sign up with Google
@@ -64,7 +64,7 @@ session_start();
         <img src="assets/images/socialMedia/facebook.png" alt="facebook">
         Sign up with Facebook
       </button>
-    </div>
+    </div> -->
   </div>
 </body>
 

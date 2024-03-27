@@ -1,12 +1,11 @@
 <?php
+use Predis\Client;
+
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-require_once __DIR__ . '/../../vendor/autoload.php';
-use Predis\Client;
-
 require_once '../redis.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 $email = $_SESSION['email'];
 $code = $_GET['code'];
@@ -35,5 +34,6 @@ if ($redis->exists($email . '_code')) {
 } else {
   $alertData = ["error", "The code has expired or is invalid, please try again!"];
   $_SESSION['error'] = $alertData;
+  // stuc chi
   header('location: ../../enterCode.php');
 }

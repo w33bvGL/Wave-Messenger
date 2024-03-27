@@ -5,7 +5,7 @@
         <i class="fa-solid fa-comment"></i>
         <span class="menu-button-text">Chats</span>
       </div>
-      <div class="button" onclick="">
+      <div class="button" onclick="openExplore()">
         <i class="fa-solid fa-clock"></i>
         <span class="menu-button-text">Explore</span>
       </div>

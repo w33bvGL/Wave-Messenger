@@ -599,21 +599,20 @@ trait Os
                     if (!isset($this->data->os->version) || $this->data->os->version == null || $this->data->os->version->value == null || $version->toFloat() < $this->data->os->version->toFloat()) {
                         $this->data->os->version = $version;
                     }
-
+    
                     /* Special case for Android L */
                     if ($version->toFloat() == 5) {
                         $this->data->os->version = $version;
                     }
                 }
-
+    
                 $this->data->os->build = $match[1];
+
             }
         }
     }
-
-
+    
     /* Windows */
-
     private function detectWindows($ua)
     {
         if (preg_match('/(Windows|WinNT|WinCE|WinMobile|Win ?[9MX]|Win(16|32))/u', $ua)) {
