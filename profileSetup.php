@@ -20,51 +20,46 @@ require_once '_inc/connect.php';
 <body>
   <div class="wrapper">
     <div class="back">
-      <div class="back-vector anul-trigger slide-right"
-        onclick="window.location.href = '_inc/registrationCleanAndRedirect.php'">
-        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="m15 19-7-7 7-7" />
-        </svg>
+      <div class="back-vector anul-trigger slide-right" onclick="window.location.href = '_inc/registrationCleanAndRedirect.php'">
+        <i class="fa-solid fa-arrow-left-long"></i>
         <p>Back</p>
       </div>
     </div>
-    <div class="title">
-      <h1 id="title-h1">Profile setup</h1>
-      <span id="title-span">hi, how do I contact you?</span>
+    <div id="_wrapper-container" style="opacity: 0;">
+      <div class="title">
+        <h1 id="title-h1">Profile setup</h1>
+        <span id="title-span">hi, how do I contact you?</span>
+      </div>
+      <form action="_inc/profileSetup.php" method="POST" enctype="multipart/form-data">
+        <div class="avatar">
+          <input type="file" id="avatarInput" accept="image/*" style="display:none;" name="avatar" required>
+          <label for="avatarInput" class="upload-button">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5" />
+            </svg>
+            <img id="avatarPreview" alt="Avatar Preview" style="display:none;">
+          </label>
+        </div>
+        <div class="input-box">
+          <label for="username">Username</label>
+          <input type="text" placeholder="Enter your Username" id="username" name="username" required autocomplete="off">
+        </div>
+        <div class="input-box">
+          <label for="tell">Phone number</label>
+          <input type="text" placeholder="Enter your phone number" id="tell" name="tell" required autocomplete="off">
+        </div>
+        <div class="input-box">
+          <label for="fname">First name</label>
+          <input type="text" placeholder="Enter your first name" id="fname" name="fname" required autocomplete="off">
+        </div>
+        <div class="input-box" style="margin-bottom: 0px;">
+          <label for="lname">Last name</label>
+          <input type="text" placeholder="Enter your last name" id="lname" name="lname" required autocomplete="off">
+        </div>
+        <input type="hidden" name="userId" value="<?php echo $_SESSION['userId'] ?>">
+        <button type="submit" id="submitBtn">Continue</button>
+      </form>
     </div>
-    <form action="_inc/profileSetup.php" method="POST" enctype="multipart/form-data">
-      <div class="avatar">
-        <input type="file" id="avatarInput" accept="image/*" style="display:none;" name="avatar" required>
-        <label for="avatarInput" class="upload-button">
-          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-            fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M5 12h14m-7 7V5" />
-          </svg>
-          <img id="avatarPreview" alt="Avatar Preview" style="display:none;">
-        </label>
-      </div>
-      <div class="input-box">
-        <label for="username">Username</label>
-        <input type="text" placeholder="Enter your Username" id="username" name="username" required autocomplete="off">
-      </div>
-      <div class="input-box">
-        <label for="tell">Phone number</label>
-        <input type="text" placeholder="Enter your phone number" id="tell" name="tell" required autocomplete="off">
-      </div>
-      <div class="input-box">
-        <label for="fname">First name</label>
-        <input type="text" placeholder="Enter your first name" id="fname" name="fname" required autocomplete="off">
-      </div>
-      <div class="input-box" style="margin-bottom: 0px;">
-        <label for="lname">Last name</label>
-        <input type="text" placeholder="Enter your last name" id="lname" name="lname" required autocomplete="off">
-      </div>
-      <input type="hidden" name="userId" value="<?php echo $_SESSION['userId'] ?>">
-      <button type="submit" id="submitBtn">Continue</button>
-    </form>
   </div>
 </body>
 
@@ -79,16 +74,16 @@ require_once '_inc/connect.php';
     align-items: center;
     color: var(--cl-2);
     margin-top: 30px;
+    cursor: pointer;
   }
 
-  .back-vector svg {
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
+  .back-vector i {
+    font-size: var(--f-1em);
+    padding-right: 10px;
   }
 
   .back-vector p {
-    font-size: var(--f-0-8em);
+    font-size: var(--f-1em);
     font-family: "wave-bold";
     /* MATMATIKAA
     font size = 14.95; 
@@ -98,7 +93,8 @@ require_once '_inc/connect.php';
   }
 
   .title {
-    margin-top: 72px;
+    /* margin-top: 72px; */
+    margin-top: calc(100dvh - 95vh);
     /* MATMATIKAA
     back margin sise 60px
     back heihgh size 18px
@@ -152,7 +148,6 @@ require_once '_inc/connect.php';
     display: flex;
     flex-direction: column;
   }
-
   .sign-in button {
     display: flex;
     align-items: center;
@@ -175,7 +170,7 @@ require_once '_inc/connect.php';
     width: 100px;
     height: 100px;
     background-color: var(--cl-12);
-    border-radius: 30px;
+    border-radius: 50%;
     overflow: hidden;
     margin-bottom: 20px;
   }
@@ -220,11 +215,21 @@ require_once '_inc/connect.php';
   }
 </style>
 <script src="js/validator.js"></script>
-<script src="js/animator.js"></script>
+<script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script defer>
-  document.addEventListener("DOMContentLoaded", function () {
-    var valik = VALIK_START_INIT();
-    ANULIK_START_INIT('page-fade-in_left');
+  document.addEventListener("DOMContentLoaded", function() {
+    let firstInput = document.getElementById('username');
+    firstInput.focus();
+    anime({
+      targets: "#_wrapper-container",
+      opacity: 1,
+      duration: 500,
+      easing: "easeInOutExpo",
+    });
+
+    // init valik
+    let valik = VALIK_START_INIT();
 
     function VALIK_SKSI() {
       valik.validateUsername();
@@ -250,11 +255,11 @@ require_once '_inc/connect.php';
   const avatarInput = document.getElementById('avatarInput');
   const avatarPreview = document.getElementById('avatarPreview');
 
-  avatarInput.addEventListener('change', function (event) {
+  avatarInput.addEventListener('change', function(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
 
-    reader.onload = function (e) {
+    reader.onload = function(e) {
       avatarPreview.src = e.target.result;
       avatarPreview.style.display = 'block';
     }
@@ -263,5 +268,4 @@ require_once '_inc/connect.php';
       reader.readAsDataURL(file);
     };
   });
-
 </script>

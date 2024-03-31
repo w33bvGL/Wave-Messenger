@@ -17,26 +17,24 @@
   <!-- successWarningError.php END -->
   <div class="wrapper">
     <div class="back">
-      <div class="back-vector anul-trigger slide-right" onclick="window.location = 'signin.php'">
-        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="m15 19-7-7 7-7" />
-        </svg>
+      <div class="back-vector anul-trigger slide-right" onclick="window.location = 'signIn.php'">
+        <i class="fa-solid fa-arrow-left-long"></i>
         <p>Back</p>
       </div>
     </div>
-    <div class="title">
-      <h1 id="title-h1">Forgot<br>password?</h1>
-      <span id="title-span">Enter your email for the verification process,<br>we will send code to your email</span>
-    </div>
-    <form action="_inc/_login/forgotPassword.php" method="POST">
-      <div class="input-box" style="margin-bottom: 0px;">
-        <label for="email">Email</label>
-        <input type="email" placeholder="Enter your email" id="email" name="email" required autocomplete=off>
+    <div id="_wrapper-container" style="opacity: 0;">
+      <div class="title">
+        <h1 id="title-h1">Forgot<br>password?</h1>
+        <span id="title-span">Enter your email for the verification process,<br>we will send code to your email</span>
       </div>
-      <button type="submit" id="submitBtn" class="anul-trigger slide-left">Continue</button>
-    </form>
+      <form action="_inc/_login/forgotPassword.php" method="POST">
+        <div class="input-box" style="margin-bottom: 0px;">
+          <label for="email">Email</label>
+          <input type="email" placeholder="Enter your email" id="email" name="email" required autocomplete=off>
+        </div>
+        <button type="submit" id="submitBtn" class="anul-trigger slide-left">Continue</button>
+      </form>
+    </div>
   </div>
 </body>
 
@@ -51,16 +49,16 @@
     align-items: center;
     color: var(--cl-2);
     margin-top: 30px;
+    cursor: pointer;
   }
 
-  .back-vector svg {
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
+  .back-vector i {
+    font-size: var(--f-1em);
+    padding-right: 10px;
   }
 
   .back-vector p {
-    font-size: var(--f-0-8em);
+    font-size: var(--f-1em);
     font-family: "wave-bold";
     /* MATMATIKAA
     font size = 14.95; 
@@ -70,11 +68,12 @@
   }
 
   .title {
-    margin-top: 72px;
+    /* margin-top: 72px; */
+    margin-top: calc(100dvh - 95vh);
     /* MATMATIKAA
     back margin sise 60px
-    back heihgh size 38px
-    1) 120 - 60 - 38 = 72px 
+    back heihgh size 18px
+    1) 120 - 60 - 18 = 42px 
     */
   }
 
@@ -83,9 +82,9 @@
     line-height: 40px;
   }
 
+
   #title-span {
-    font-size: 1.0709em;
-    font-family: "wave-bold";
+    font-size: var(--f-1-1em);
     color: var(--cl-2);
     /* MATMATIKAA
     font size = 14.95; 
@@ -95,7 +94,7 @@
   }
 
   form {
-    margin-top: 50px;
+    margin-top: 25px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -105,13 +104,24 @@
     margin-top: 15px;
   }
 </style>
-<script src="js/animator.js"></script>
+<script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/validator.js"></script>
 <script defer>
   document.addEventListener("DOMContentLoaded", () => {
-    var valik = VALIK_START_INIT();
-    ANULIK_START_INIT('page-fade-in_left');
-    
+    let firstInput = document.getElementById('email');
+    firstInput.focus();
+
+    anime({
+      targets: "#_wrapper-container",
+      opacity: 1,
+      duration: 500,
+      easing: "easeInOutExpo",
+    });
+
+    // init valik
+    let valik = VALIK_START_INIT();
+
     function VALIK_SKSI() {
       valik.validateEmail();
     }

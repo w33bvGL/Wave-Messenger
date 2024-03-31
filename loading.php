@@ -90,7 +90,7 @@ $userId = $data['id'];
               if (response.ok) {
                 setTimeout(function () {
                   window.location.href = 'index.php';
-                }, 1000);
+                }, 10000);
               }
             })
             .catch (error => {

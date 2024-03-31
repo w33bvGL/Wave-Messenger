@@ -48,7 +48,7 @@ async def save_message_to_mongo(data):
 async def start_server():
     with ThreadPoolExecutor(max_workers=10) as executor:
         # localhost:9991
-        async with websockets.serve(new_client_connected, "192.168.1.7", 9991):
+        async with websockets.serve(new_client_connected, "192.168.1.4", 9991):
             await asyncio.Future()
 
 if __name__ == '__main__':

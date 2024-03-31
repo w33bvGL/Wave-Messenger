@@ -21,32 +21,29 @@ session_start();
   <!-- successWarningError.php END -->
   <div class="wrapper">
     <div class="back">
-      <div class="back-vector anul-trigger slide-right" onclick="window.location = 'welcome.php'">
-        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="m15 19-7-7 7-7" />
-        </svg>
+      <div class="back-vector" onclick="window.location = 'welcome.php'">
+        <i class="fa-solid fa-arrow-left-long"></i>
         <p>Back</p>
       </div>
     </div>
-    <div class="title">
-      <h1 id="title-h1">Sign in</h1>
-      <span id="title-span">Please log in into your account</span>
-    </div>
-    <form action="_inc/signIn.php" method="POST">
-      <div class="input-box">
-        <label for="email">Email</label>
-        <input type="email" placeholder="Enter your email" id="email" name="email" required autocomplete="username">
+    <div id="_wrapper-container" style="opacity: 0;">
+      <div class="title">
+        <h1 id="title-h1">Sign in</h1>
+        <span id="title-span">Please log in into your account</span>
       </div>
-      <div class="input-box" style="margin-bottom: 15px;">
-        <label for="password">Password</label>
-        <input type="password" placeholder="Enter your password" id="password" name="password" required autocomplete="current-password">
-      </div>
-      <a href="forgotPassword.php" class="anul-trigger slide-left">Forgot password?</a>
-      <button type="submit">Sign in</button>
-    </form>
-    <!-- <div class="sign-in">
+      <form action="_inc/signIn.php" method="POST">
+        <div class="input-box">
+          <label for="email">Email</label>
+          <input type="email" placeholder="Enter your email" id="email" name="email" required autocomplete="username">
+        </div>
+        <div class="input-box" style="margin-bottom: 15px;">
+          <label for="password">Password</label>
+          <input type="password" placeholder="Enter your password" id="password" name="password" required autocomplete="current-password">
+        </div>
+        <a href="forgotPassword.php" class="anul-trigger slide-left">Forgot password?</a>
+        <button type="submit">Sign in</button>
+      </form>
+      <!-- <div class="sign-in">
       <button>
         <img src="assets/images/socialMedia/google.png" alt="google">
         Sign in with Google
@@ -56,6 +53,7 @@ session_start();
         Sign in with Facebook
       </button>
     </div> -->
+    </div>
   </div>
 </body>
 
@@ -73,14 +71,13 @@ session_start();
     cursor: pointer;
   }
 
-  .back-vector svg {
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
+  .back-vector i {
+    font-size: var(--f-1em);
+    padding-right: 10px;
   }
 
   .back-vector p {
-    font-size: var(--f-0-8em);
+    font-size: var(--f-1em);
     font-family: "wave-bold";
     /* MATMATIKAA
     font size = 14.95; 
@@ -104,7 +101,7 @@ session_start();
   }
 
   #title-span {
-    font-size:  var(--f-1-1em);
+    font-size: var(--f-1-1em);
     color: var(--cl-2);
     /* MATMATIKAA
     font size = 14.95; 
@@ -114,7 +111,7 @@ session_start();
   }
 
   form {
-    margin-top: 50px;
+    margin-top: 25px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -160,9 +157,17 @@ session_start();
     margin-right: 10px;
   }
 </style>
-<script src="js/animator.js"></script>
+<script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script defer>
   document.addEventListener("DOMContentLoaded", () => {
-    ANULIK_START_INIT('page-fade-in_left');
+    let firstInput = document.getElementById('email');
+    firstInput.focus();
+    anime({
+      targets: "#_wrapper-container",
+      opacity: 1,
+      duration: 500,
+      easing: "easeInOutExpo",
+    });
   });
 </script>

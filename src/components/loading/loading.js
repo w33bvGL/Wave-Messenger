@@ -11,5 +11,5 @@ document.addEventListener("DOMContentLoaded", function () {
         
           indexElement.style.overflow = '';
       }, 100);
-  }, 50);
+  }, 5000);
 });

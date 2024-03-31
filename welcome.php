@@ -5,7 +5,7 @@ logOut();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,9 +34,9 @@ logOut();
     </div>
     <div class="welcome-buttton-and-new-account">
       <p id="existing-customer">Existing customer / Get started</p>
-      <button onclick="window.location.href = 'signIn.php';" class="anul-trigger slide-left" id="button-start">Sign
+      <button onclick="window.location.href = 'signIn.php';" id="button-start">Sign
         in</button>
-      <p id="new-customer">New customer? <a href="signUp.php" class="anul-trigger slide-left">Create new
+      <p id="new-customer">New customer? <a href="signUp.php">Create new
           account</a></p>
     </div>
   </div>
@@ -117,7 +117,7 @@ logOut();
   }
 
   .title {
-    margin-top: 120px;
+    margin-top: calc(100dvh - 90vh);
     position: relative;
   }
 
@@ -179,10 +179,8 @@ logOut();
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
   }
 </style>
-<script src="js/animator.js"></script>
 <script defer>
   document.addEventListener("DOMContentLoaded", () => {
-    // ANULIK_START_INIT('page-fade-in_right');
     let welcome = document.getElementById("title-h1");
     let letsGetStarted = document.getElementById("title-span");
     let buttonStart = document.getElementById("button-start");

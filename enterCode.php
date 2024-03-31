@@ -21,7 +21,7 @@ require 'vendor/autoload.php';
   <?php include_once 'src/components/other/successWarningError.php' ?>
   <!-- successWarningError.php END -->
   <div class="wrapper">
-    <div class="form">
+    <div class="form" style="opacity: 0;">
       <p id="title">Enter 4 digit code</p>
       <p id="description">A four-digit code should have come to your<br>email address that you indicated.</p>
       <div class="input-box">
@@ -31,18 +31,21 @@ require 'vendor/autoload.php';
         <input type="number" id="digit4" name="digit4" min="0" max="9" required oninput="moveToNextInput(this, 'digit4', 'digit3', 1, event)" onkeydown="handleBackspace(this, event)">
       </div>
       <div class="buttons">
-        <button type="submit" id="submitBtn" class="anul-trigger slide-left">Confirm</button>
-        <button id="cancel" class="anul-trigger slide-left" type="button" onclick="if('<?php echo $_SESSION['location'] ?>' == 'signUp.php'){
+        <button type="submit" id="submitBtn">Confirm</button>
+        <button id="cancel" type="button" onclick="if('<?php echo $_SESSION['location'] ?>' == 'signUp.php'){
           window.location.href ='_inc/registrationCleanAndRedirect.php';
         } else if('<?php echo $_SESSION['location'] ?>' == 'forgotPassword.php'){
           window.location.href ='forgotPassword.php';
         } else if('<?php echo $_SESSION['location'] ?>' == 'signIn.php'){
           window.location.href ='signIn.php';
+        } else {
+          windwo.location.href ='singIn.php'; 
         }">Cancel</button>
       </div>
-      </div>
+    </div>
   </div>
 </body>
+
 </html>
 <style>
   #title {
@@ -69,7 +72,7 @@ require 'vendor/autoload.php';
   }
 
   .form {
-    margin-top: 200px;
+    margin-top: calc(100dvh - 85vh);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -112,10 +115,21 @@ require 'vendor/autoload.php';
     color: var(--cl-1);
   }
 </style>
-<script src="js/animator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script defer>
-  const recipient = "<?php echo $_SESSION['email'] ?>";
+  document.addEventListener("DOMContentLoaded", function() {
+    let firstInput = document.getElementById('digit1');
+    firstInput.focus();
 
+    anime({
+      targets: ".form",
+      opacity: 1,
+      duration: 500,
+      easing: "easeInOutExpo",
+    });
+  });
+
+  const recipient = "<?php echo $_SESSION['email'] ?>";
   const data = new URLSearchParams();
   data.append('recipient', recipient);
 
@@ -126,13 +140,6 @@ require 'vendor/autoload.php';
 
   fetch('_inc/_mailer/mailer.php', options)
     .catch(error => console.error('error:', error));
-
-  document.addEventListener("DOMContentLoaded", () => {
-    ANULIK_START_INIT('page-fade-in_left');
-
-    let firstInput = document.getElementById('digit1');
-    firstInput.focus();
-  });
 
   function handleBackspace(input, event) {
     if (event.key === 'Backspace' && input.value.length === 0) {
@@ -157,7 +164,6 @@ require 'vendor/autoload.php';
   }
 
   document.querySelector('#submitBtn').addEventListener('click', function(event) {
-    event.preventDefault();
     var digit1 = document.getElementById('digit1').value;
     var digit2 = document.getElementById('digit2').value;
     var digit3 = document.getElementById('digit3').value;
@@ -167,6 +173,5 @@ require 'vendor/autoload.php';
     setTimeout(() => {
       window.location.href = `_inc/_mailer/getDigitCode.php?code=${enteredCode}&email=${recipient}`;
     }, 1000);
-    return false;
   });
 </script>

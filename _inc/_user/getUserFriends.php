@@ -24,7 +24,6 @@ if (isset($requestData['userFriends']) && isset($requestData['currentUserId'])) 
 
     header('Content-Type: application/json');
     echo json_encode($friendsList, JSON_PRETTY_PRINT);
-   
 } else {
     header('HTTP/1.1 400 Bad Request');
 }

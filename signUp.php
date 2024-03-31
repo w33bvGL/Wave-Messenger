@@ -9,6 +9,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ATOM Wave - Sign up</title>
   <!-- styles -->
+  <script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="assets/wave/icon.webp" type="image/x-icon">
   <link rel="stylesheet" href="src/_root/palette_light.css" id="themeStylesheet">
   <link rel="stylesheet" href="src/_root/root.css" />
@@ -22,40 +23,35 @@ session_start();
   <div class="wrapper">
     <div class="back">
       <div class="back-vector anul-trigger slide-right" onclick="window.location = 'welcome.php'">
-        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="m15 19-7-7 7-7" />
-        </svg>
+        <i class="fa-solid fa-arrow-left-long"></i>
         <p>Back</p>
       </div>
     </div>
-    <div class="title">
-      <h1 id="title-h1">Sign up</h1>
-      <span id="title-span">Please create a new account</span>
-    </div>
-    <form action="_inc/signUp.php" method="POST">
-      <div class="input-box">
-        <label for="email">Email</label>
-        <input type="email" placeholder="Enter your email" id="email" name="email" required autocomplete="off">
+    <div id="_wrapper-container" style="opacity: 0;">
+      <div class="title">
+        <h1 id="title-h1">Sign up</h1>
+        <span id="title-span">Please create a new account</span>
       </div>
-      <div class="input-box">
-        <label for="password">Password</label>
-        <input type="password" placeholder="Enter your password" id="password" name="password" required
-          autocomplete="off">
-      </div>
-      <div class="input-box" style="margin-bottom: 15px;">
-        <label for="password-repeat">Repeat password</label>
-        <input type="password" placeholder="Repeat password" id="password-repeat" name="password-repeat" required
-          autocomplete="off">
-      </div>
-      <div class="input-box checkbox" style="margin-bottom: 0px;">
-        <input type="checkbox" required id="accept">
-        <label for="accept" id="accept-label">Agree the terms of use and privacy policy</label>
-      </div>
-      <button type="submit" id="submitBtn" class="anul-trigger">Sign up</button>
-    </form>
-    <!-- <div class="sign-in">
+      <form action="_inc/signUp.php" method="POST">
+        <div class="input-box">
+          <label for="email">Email</label>
+          <input type="email" placeholder="Enter your email" id="email" name="email" required autocomplete="off">
+        </div>
+        <div class="input-box">
+          <label for="password">Password</label>
+          <input type="password" placeholder="Enter your password" id="password" name="password" required autocomplete="off">
+        </div>
+        <div class="input-box" style="margin-bottom: 15px;">
+          <label for="password-repeat">Repeat password</label>
+          <input type="password" placeholder="Repeat password" id="password-repeat" name="password-repeat" required autocomplete="off">
+        </div>
+        <div class="input-box checkbox" style="margin-bottom: 0px;">
+          <input type="checkbox" required id="accept">
+          <label for="accept" id="accept-label">Agree the terms of use and privacy policy</label>
+        </div>
+        <button type="submit" id="submitBtn" class="anul-trigger">Sign up</button>
+      </form>
+      <!-- <div class="sign-in">
       <button>
         <img src="assets/images/socialMedia/google.png" alt="google">
         Sign up with Google
@@ -65,6 +61,7 @@ session_start();
         Sign up with Facebook
       </button>
     </div> -->
+    </div>
   </div>
 </body>
 
@@ -81,14 +78,13 @@ session_start();
     margin-top: 30px;
   }
 
-  .back-vector svg {
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
+  .back-vector i {
+    font-size: var(--f-1em);
+    padding-right: 10px;
   }
 
   .back-vector p {
-    font-size: var(--f-0-8em);
+    font-size: var(--f-1em);
     font-family: "wave-bold";
     /* MATMATIKAA
     font size = 14.95; 
@@ -98,7 +94,7 @@ session_start();
   }
 
   .title {
-    margin-top: 72px;
+    margin-top: calc(100dvh - 95vh);
     /* MATMATIKAA
     back margin sise 60px
     back heihgh size 18px
@@ -125,7 +121,7 @@ session_start();
   }
 
   form {
-    margin-top: 50px;
+    margin-top: 25px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -173,11 +169,20 @@ session_start();
   }
 </style>
 <script src="js/validator.js"></script>
-<script src="js/animator.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script defer>
-  document.addEventListener("DOMContentLoaded", function () {
-    var valik = VALIK_START_INIT();
-    ANULIK_START_INIT('page-fade-in_left');
+  document.addEventListener("DOMContentLoaded", function() {
+    let firstInput = document.getElementById('email');
+    firstInput.focus();
+    anime({
+      targets: "#_wrapper-container",
+      opacity: 1,
+      duration: 500,
+      easing: "easeInOutExpo",
+    });
+
+    const valik = VALIK_START_INIT();
 
     function VALIK_SKSI() {
       valik.validateEmail();

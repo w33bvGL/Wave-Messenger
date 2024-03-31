@@ -1,6 +1,5 @@
 <?php
 // use WhichBrowser\Parser;
-
 function setUserInformation($userId, $connect)
 {
   $parser = new WhichBrowser\Parser(getallheaders());

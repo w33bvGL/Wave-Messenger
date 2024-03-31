@@ -1,4 +1,4 @@
-const chatSocket = new WebSocket(`ws://192.168.1.7:9991?userId=${userId}`);
+const chatSocket = new WebSocket(`ws://192.168.1.4:9991?userId=${userId}`);
 
 chatSocket.onopen = function () {
   console.log("Chat WebSocket connected successfully!");
