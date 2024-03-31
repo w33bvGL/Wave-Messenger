@@ -18,7 +18,7 @@
                         <i class="fa-regular fa-square-plus"></i>
                     </div>
                     <div class="option-name">
-                        <p class="title">New chat</p>
+                        <p class="title">New contact</p>
                         <p class="subtitle">Send a message to your contact</p>
                     </div>
                 </div>

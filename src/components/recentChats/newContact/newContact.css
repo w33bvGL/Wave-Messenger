@@ -7,7 +7,8 @@
   background-color: var(--cl-3);
   right: -100%;
   opacity: 0;
-  transition: right var(--slide-windows-animation-time), opacity var(--slide-windows-animation-time);
+  transition: right var(--slide-windows-animation-time),
+    opacity var(--slide-windows-animation-time);
 }
 
 .new-contact-container-top-header {
@@ -41,18 +42,37 @@
   color: var(--cl-2);
 }
 
-
 .select-search-option {
-    width: 100%;
-    padding: 40px 15px 5px 15px;
+  width: 100%;
+  padding: 40px 15px 5px 15px;
 }
 
-.select-search-option form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.select-search-option .new-contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.select-search-option form input {
-    margin-bottom: 10px;
+.select-search-option .new-contact-form input {
+  margin-bottom: 10px;
+}
+
+.select-search-option .new-contact-form #scan-Qr i{
+   padding-right: 5px;
+}
+
+.select-search-option .new-contact-form #or {
+  font-size: var(--f-1em);
+  padding: 10px 0;
+  color: var(--cl-2);
+  width: 100%;
+  text-align: center;
+}
+
+.select-search-option .new-contact-form #scanning-instruction {
+  padding-top: 20px;
+  font-size: var(--f-1em);
+  width: 100%;
+  text-align: center;
+  color: var(--cl-2);
 }
